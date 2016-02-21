@@ -1,0 +1,154 @@
+$sidebar_bgcolor: #fbfbfb;
+$sidebar_width: 333px;
+$sidebar_color: #5d656c;
+
+%borderradius {
+	border: 1px solid #dee1e4;
+	border-radius: 5px;	
+}
+
+.section-title {
+	font-family: $opensanssb;
+	font-size: 20px;
+	margin-top: 0;
+	margin-bottom: 28px;
+	padding-left: 9px;
+}
+
+.container {
+	padding-left: 11px;
+	@extend %clearfix;
+}
+
+.sidebar {
+	display: inline-block;
+	width: $sidebar_width;
+	vertical-align: top;
+	float: left;
+}
+
+.sidebar__list {
+	min-height: 92px;
+	@extend %borderradius;
+	margin-bottom: 36px;
+	background-color: $sidebar_bgcolor;
+	font-family: $opensansreg;
+	font-size: 14px;
+	padding-left: 0;
+}
+
+.sidebar__item {
+	min-height: 46px;
+	width: 100%;
+}
+
+.sidebar__link {
+	display: inline-block;
+	width: 100%;
+	min-height: 46px;
+	color: $sidebar_color;
+	padding-left: 28px;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	border-bottom: 1px solid #dee1e4;
+	
+	&:hover {
+		background-color: #d9e5ea;
+	}
+}
+
+.sidebar__link_last {
+	border-bottom: none;
+}
+
+.sidebar__acco-form {
+	background-color: $sidebar_bgcolor;
+	@extend %borderradius;
+}
+
+.acco__list {
+	padding-left: 0;
+}
+
+.acco__item {
+	border-bottom: 1px solid #dee1e4;
+}
+
+.acco__link {
+	font-family: $opensanssb;
+	font-size: 16px;
+	color: $font-color;
+	@extend %inlineblock;
+	width: 100%;
+	min-height: 46px;
+	padding-left: 28px;
+	padding-top: 11px;
+	position: relative;
+}
+
+.acco__link:hover:after {
+	@include sprite($arrow-up);
+	content: "";
+	display: inline-block;
+	width: 18px;
+	height: 11px;
+	position: absolute;
+	right: 11px;
+	bottom: 19px;
+
+}
+
+.acco__content {
+	font-family: $opensansreg;
+	font-size: 14px;
+	color: $font-color;
+	padding-left: 29px;
+	margin-top: 2px;
+}
+
+.acco__content-link {
+	color: #5db2fc;
+	text-decoration: underline;
+}
+
+.acco__content-item {
+	margin-bottom: 19px;
+}
+
+.label {
+	display: inline-block;
+	position: relative;
+	padding-left: 29px;
+	cursor: pointer;
+
+	&:before {
+		content: "";
+		display: inline-block;
+		width: 19px;
+		height: 19px;
+		position: absolute;
+		left: 0;
+		bottom: 1px;
+		cursor: pointer;	
+	}
+}
+
+.label__radio:before {
+	@include sprite($radio-unchecked);
+}
+
+.label__radio:hover:before {
+	@include sprite($radio-hover);
+}
+		
+.label__checkbox:before {
+	@include sprite($box-unchecked);
+}
+
+.label__checkbox:hover:before {
+		@include sprite($box-hover);
+}
+
+.acco__content-item_input {
+	display: none;
+}

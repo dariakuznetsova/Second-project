@@ -1,0 +1,16 @@
+@mixin fonts($font_item){
+	@font-face {
+		font-family: $font_item;
+	    src: url('/fonts/'+$font_item+'.eot');
+	    src: url('/fonts/'+$font_item+'.eot?#iefix') format('embedded-opentype'),
+	         url('/fonts/'+$font_item+'.woff') format('woff'),
+	         url('/fonts/'+$font_item+'.ttf') format('truetype');
+	    font-weight: normal;
+    	font-style: normal;
+	}
+}
+
+@include fonts('opensans-regular');
+@include fonts('opensans-semibold');
+@include fonts('opensans-light');
+@include fonts('opensans-bold');

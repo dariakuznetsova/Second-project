@@ -1,0 +1,27 @@
+.breadcrumbs {
+	width: 1111px;
+	height: 65px;
+	margin: 0 auto;
+	padding-top: 28px;
+	padding-left: 10px;
+	margin-bottom: 2px;
+}
+
+.breadcrumbs__list {
+	padding-left: 0;
+}
+
+.breadcrumbs__item, .breadcrumbs__link {
+	display: inline-block;
+}
+
+.breadcrumbs__link {
+	font-family: 'opensans-regular';
+	font-size: 14px;
+	color: #4d4d4d;	
+
+	&_active {
+		color: #ff6600;
+		text-decoration: underline;
+	}
+}

@@ -1,0 +1,57 @@
+aside.sidebar
+
+	ul.sidebar__list
+		li.sidebar__item
+			a(href="#").sidebar__link Флагманы
+		li.sidebar__item
+			a(href="#").sidebar__link.sidebar__link_last Бюджетная линейка
+
+
+	form.sidebar__acco-form
+		ul.acco__list
+			li.acco__item.sidebar__item
+
+				a(href="#").acco__link Наличие в магазинах
+				ul.acco__content
+					- var acco_availability = ['Во всех магазинах', 'В ближайшем магазине']
+					each acco_availability_input in acco_availability
+						li.acco__content-item
+							input(type="radio").acco__content-item_input
+							label.label.label__radio= acco_availability_input
+
+			li.acco__item.sidebar__item
+
+				a(href="#").acco__link Бренды
+				ul.acco__content
+					- var acco_brands = ['Lenovo', 'Apple', 'Samsung', 'Asus', 'Motorola']
+					each acco_brands_input in acco_brands
+						li.acco__content-item
+							input(type="checkbox").acco__content-item_input
+							label.label.label__checkbox= acco_brands_input
+					li
+						a(href='#').acco__content-link Сбросить фильтр
+
+			li.acco__item.sidebar__item
+
+				a(href="#").acco__link Цена
+				ul.acco__content
+					li.acco__content-item
+
+			li.acco__item.sidebar__item
+
+				a(href="#").acco__link Цвет
+				ul.acco__content.acco__colors
+					-for (var i=0; i<12; i++)
+						li(class="acco__colors"+i).acco__colors
+
+			li.acco__item.sidebar__item
+
+				a(href="#").acco__link.sidebar__link_last Операционные системы
+				ul.acco__content
+					- var acco_os = ['Android', 'iOS', 'Windows-mobile', 'Symbian', 'Custom']
+					each acco_os_item in acco_os
+						li.acco__content-item
+							input(type="checkbox").acco__content-item_input
+							label.label.label__checkbox= acco_os_item
+					li
+						a(href='#').acco__content-link Сбросить фильтр

@@ -1,0 +1,14 @@
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Sections */
+.socials-sprite {
+  background-image: url('../images/socials-s6a1634bffc.png');
+  background-repeat: no-repeat;
+}

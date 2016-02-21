@@ -1,0 +1,36 @@
+include _common/_mixins.jade
+doctype html
+html(lang='en-ru')
+	head
+		meta(charset='UTF-8')
+		meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
+		meta(name='viewport' content='width=device-width')
+		link(rel="stylesheet" href="bower/normalize-css/normalize.css")
+		link(rel="stylesheet" type="text/css" href="css/main.css")
+		script(src="bower/modernizer/modernizr.js")
+		block title 
+	body
+		.wrapper
+			include _common/_header.jade
+			include _common/_products-menu.jade
+			+breadcrumbs(['Главная >', 'Каталог'])
+			article.article
+				block section-title
+				.container
+					include _common/_sidebar.jade
+					block content
+				include _common/_main-information.jade
+			include _common/_footer.jade
+		script(src="bower/jquery/dist/jquery.min.js")
+		script(src="js/main.js")
+
+
+
+					
+
+
+
+									
+
+
+

@@ -1,0 +1,15 @@
+@mixin display($value) {
+	display:$value;
+ 	display:'-moz-'+$value;
+ 	display:'-o-'+$value;
+ 	display:-ms-$value;
+ 	display:'-webkit-'+$value;
+}
+
+// @mixin boxorient ($value) {
+// 	$value-orient:horizontal;
+//  	o-box-orient:horizontal;
+//  	-moz-box-orient:horizontal;
+//  	-ms-box-orient:horizontal;
+//  	-webkit-box-orient:horizontal;
+// }

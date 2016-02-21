@@ -1,0 +1,11 @@
+.products-menu
+	.products-menu__wrapper
+		ul.products-menu__list
+			-var prod_menu = ['Планшеты', 'Мобильные телефоны', 'Mp3 плееры', 'Персональные компьютеры', 'Ноутбуки', 'Аксессуары', 'Бытовая техника']
+			-for(var i=0;i<prod_menu.length;i++)
+				if i !=1
+					li.products-menu__item
+						a(href='#').products-menu__link=prod_menu[i]
+				else
+					li.products-menu__item
+						a(href='#').products-menu__link.products-menu__link-active=prod_menu[i]
