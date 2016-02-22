@@ -16,9 +16,9 @@
 					<div class="header__wrapper">
 						<div class="socials">
 							<ul class="socials__list">
-								<li class="socials__item"><a href="https://vk.com/" target="_blank" class="socials__link_fb socials__link">fb</a></li>
-								<li class="socials__item"><a href="https://vk.com/" target="_blank" class="socials__link_vk socials__link">vk</a></li>
-								<li class="socials__item"><a href="https://vk.com/" target="_blank" class="socials__link_tw socials__link">tw</a></li>
+								<li class="socials__item-header"><a href="https://www.facebook.com/" target="_blank" class="socials__link_fb socials__link">fb</a></li>
+								<li class="socials__item-header"><a href="https://vk.com/" target="_blank" class="socials__link_vk socials__link">vk</a></li>
+								<li class="socials__item-header"><a href="https://twitter.com/" target="_blank" class="socials__link_tw socials__link">tw</a></li>
 							</ul>
 						</div>
 						<div class="header__address_wrapper">
@@ -34,7 +34,7 @@
 					</div>
 				</div>
 				<div class="header__container-second-line">
-					<div class="logo__header-wrapper"><a href="#" class="logo__link"><img src="images/logo.png" alt="Логотип" class="logo__img"></a></div>
+					<div class="logo__wrapper"><a href="/" class="logo__link"><img src="images/logo.png" alt="Логотип" class="logo__img"></a></div>
 					<div class="form-nav__header-wrapper">
 						<form class="form__header">
 							<div class="form__header_wrapper">
@@ -117,28 +117,36 @@
 											<input type="checkbox" class="acco__content-item_input">
 											<label class="label label__checkbox">Motorola</label>
 										</li>
-										<li><a href="#" class="acco__content-link">Сбросить фильтр</a></li>
+										<li class="acco__reset"><a href="#" class="acco__content-link">Сбросить фильтр</a></li>
 									</ul>
 								</li>
 								<li class="acco__item sidebar__item"><a href="#" class="acco__link">Цена</a>
 									<ul class="acco__content">
-										<li class="acco__content-item"></li>
+										<li class="acco__content-item">
+											<div class="prices">
+												<label class="price__text">от</label>
+												<input type="text" class="price__input price__input_first">
+												<label class="price__text">до</label>
+												<input type="text" class="price__input">
+												<div class="slider"></div>
+											</div>
+										</li>
 									</ul>
 								</li>
-								<li class="acco__item sidebar__item"><a href="#" class="acco__link">Цвет</a>
+								<li class="acco__item sidebar__item acco__item_color"><a href="#" class="acco__link acco__link_colors">Цвет</a>
 									<ul class="acco__content acco__colors">
-										<li class="acco__colors0 acco__colors"></li>
-										<li class="acco__colors1 acco__colors"></li>
-										<li class="acco__colors2 acco__colors"></li>
-										<li class="acco__colors3 acco__colors"></li>
-										<li class="acco__colors4 acco__colors"></li>
-										<li class="acco__colors5 acco__colors"></li>
-										<li class="acco__colors6 acco__colors"></li>
-										<li class="acco__colors7 acco__colors"></li>
-										<li class="acco__colors8 acco__colors"></li>
-										<li class="acco__colors9 acco__colors"></li>
-										<li class="acco__colors10 acco__colors"></li>
-										<li class="acco__colors11 acco__colors"></li>
+										<li class="acco__colors_item0 acco__colors_item"></li>
+										<li class="acco__colors_item1 acco__colors_item"></li>
+										<li class="acco__colors_item2 acco__colors_item"></li>
+										<li class="acco__colors_item3 acco__colors_item"></li>
+										<li class="acco__colors_item4 acco__colors_item"></li>
+										<li class="acco__colors_item5 acco__colors_item"></li>
+										<li class="acco__colors_item6 acco__colors_item"></li>
+										<li class="acco__colors_item7 acco__colors_item"></li>
+										<li class="acco__colors_item8 acco__colors_item"></li>
+										<li class="acco__colors_item9 acco__colors_item"></li>
+										<li class="acco__colors_item10 acco__colors_item"></li>
+										<li class="acco__colors_item11 acco__colors_item"></li>
 									</ul>
 								</li>
 								<li class="acco__item sidebar__item"><a href="#" class="acco__link sidebar__link_last">Операционные системы</a>
@@ -163,7 +171,7 @@
 											<input type="checkbox" class="acco__content-item_input">
 											<label class="label label__checkbox">Custom</label>
 										</li>
-										<li><a href="#" class="acco__content-link">Сбросить фильтр</a></li>
+										<li class="acco__reset"><a href="#" class="acco__content-link">Сбросить фильтр</a></li>
 									</ul>
 								</li>
 							</ul>
@@ -179,40 +187,52 @@
 					</div>
 				</div>
 				<div class="main-information">
-					<h2 class="section-title">Важная информация</h2>
-					<div class="container">
-						<div class="main-information__columns"></div>
-						<div class="main-information__columns"></div>
+					<h2 class="section-title section-title__footer">Важная информация</h2>
+					<div class="column">
+						<p class="column__paragraph">Задача организации, в особенности же постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. Значимость этих проблем настолько очевидна, что реализация намеченных плановых заданий позволяет выполнять важные задания по разработке позиций, занимаемых участниками в отношении поставленных задач. Повседневная практика показывает. Таким образом начало повседневной работы по формированию позиции влечет за собой.</p>
+						<p class="column__paragraph">Не следует, однако забывать, что консультация с широким активом позволяет оценить значение дальнейших направлений развития. Задача организации, в особенности же сложившаяся структура организации способствует подготовки и реализации систем массового участия. С другой стороны консультация с широким активом. </p>
+						<p class="column__paragraph">Значимость этих проблем настолько очевидна, что рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Ровая модель организационной деятельности способствует подготовки и реализации направлений прогрессивного развития. Задача организации, в особенности же дальнейшее развитие различных форм. </p>
+						<p class="column__paragraph">Значимость этих проблем настолько очевидна, что дальнейшее развитие различных форм деятельности требуют определения и уточнения новых предложений. Идейные соображения высшего порядка, а также укрепление и развитие структуры требуют определения и уточнения соответствующий условий активизации. Значимость этих проблем настолько очевидна, что рамки и место обучения кадров позволяет оценить значение позиций, занимаемых участниками в отношении поставленных задач.</p>
+						<p class="column__paragraph">Товарищи! новая модель организационной деятельности требуют от нас анализа форм развития. Значимость этих проблем настолько очевидна, что реализация намеченных плановых заданий позволяет выполнять важные задания по разработке форм развития.</p>
+						<p class="column__paragraph">Значимость этих проблем настолько очевидна, что дальнейшее развитие различных форм деятельности требуют определения и уточнения новых предложений. Идейные соображения высшего порядка, а также укрепление и развитие структуры требуют определения и уточнения соответствующий условий активизации.</p>
 					</div>
 				</div>
 			</article>
 			<footer class="footer">
-				<div class="footer__left">
-					<div class="logo"><img src="" class="logo__img"></div>
+				<div class="footer__wrapper">
+					<div class="footer__left-right-wrapper">
+						<div class="footer__left">
+							<div class="logo__wrapper"><a href="/" class="logo__link"><img src="images/logo-footer.png" class="logo__img"></a></div>
+						</div>
+						<div class="footer__right">
+							<div class="socials socials__footer">
+								<ul class="socials__list">
+									<li class="socials__item-footer"><a href="https://www.facebook.com/" target="_blank" class="socials__footer-link_fb socials__link">fb</a></li>
+									<li class="socials__item-footer"><a href="https://vk.com/" target="_blank" class="socials__footer-link_vk socials__link">vk</a></li>
+									<li class="socials__item-footer"><a href="https://twitter.com/" target="_blank" class="socials__footer-link_tw socials__link">tw</a></li>
+								</ul>
+							</div>
+							<div class="products-menu__footer">
+								<ul class="products-menu__footer-list">
+									<li class="products-menu__footer-item"><a href="#" class="products-menu__footer-link">Планшеты</a></li>
+									<li class="products-menu__footer-item"><a href="#" class="products-menu__footer-link">Мобильные телефоны</a></li>
+									<li class="products-menu__footer-item"><a href="#" class="products-menu__footer-link">Mp3 плееры</a></li>
+									<li class="products-menu__footer-item"><a href="#" class="products-menu__footer-link">Персональные компьютеры</a></li>
+									<li class="products-menu__footer-item"><a href="#" class="products-menu__footer-link">Ноутбуки</a></li>
+									<li class="products-menu__footer-item"><a href="#" class="products-menu__footer-link">Аксессуары</a></li>
+									<li class="products-menu__footer-item"><a href="#" class="products-menu__footer-link">Бытовая техника</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
 				</div>
-				<div class="footer__right">
-					<div class="socials socials__footer">
-						<ul class="socials__list">
-							<li class="socials__item"><a href="" class="socials__link socials__link-fb">Fb</a></li>
-							<li class="socials__item"><a href="" class="socials__link socials__link-vk">vk</a></li>
-							<li class="socials__item"><a href="" class="socials__link socials__link-tw">tw</a></li>
-						</ul>
-					</div>
-					<div class="products-menu__footer">
-						<ul class="products-menu__footer-list">
-							<li class="products-menu__item"><a href="#" class="products-menu__footer-link">Планшеты</a></li>
-							<li class="products-menu__footer-item"><a href="#" class="products-menu__footer-link">Мобильные телефоны</a></li>
-							<li class="products-menu__footer-item"><a href="#" class="products-menu__footer-link">Mp3 плееры</a></li>
-							<li class="products-menu__footer-item"><a href="#" class="products-menu__footer-link">Персональные компьютеры</a></li>
-							<li class="products-menu__footer-item"><a href="#" class="products-menu__footer-link">Ноутбуки</a></li>
-							<li class="products-menu__footer-item"><a href="#" class="products-menu__footer-link">Аксессуары</a></li>
-							<li class="products-menu__footer-item"><a href="#" class="products-menu__footer-link">Бытовая техника</a></li>
-						</ul>
-					</div>
+				<div class="footer__down">
+					<div class="footer__text">All rights reserved. 2016. no copy allowed</div>
 				</div>
 			</footer>
 		</div>
 		<script src="bower/jquery/dist/jquery.min.js"></script>
+		<script src="bower/slider/jquery-ui.min.js"></script>
 		<script src="js/main.js"></script>
 	</body>
 </html>

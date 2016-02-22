@@ -8,16 +8,18 @@ $sidebar_color: #5d656c;
 }
 
 .section-title {
-	font-family: $opensanssb;
+	font-family: $opensansb;
 	font-size: 20px;
 	margin-top: 0;
 	margin-bottom: 28px;
 	padding-left: 9px;
+	color: $font-color;
 }
 
 .container {
 	padding-left: 11px;
 	@extend %clearfix;
+	margin-bottom: 25px;
 }
 
 .sidebar {
@@ -86,7 +88,7 @@ $sidebar_color: #5d656c;
 	position: relative;
 }
 
-.acco__link:hover:after {
+.up:after {
 	@include sprite($arrow-up);
 	content: "";
 	display: inline-block;
@@ -95,7 +97,17 @@ $sidebar_color: #5d656c;
 	position: absolute;
 	right: 11px;
 	bottom: 19px;
+}
 
+.down:after {
+	@include sprite($arrow-down);
+	content: "";
+	display: inline-block;
+	width: 18px;
+	height: 11px;
+	position: absolute;
+	right: 11px;
+	bottom: 19px;
 }
 
 .acco__content {
@@ -140,6 +152,10 @@ $sidebar_color: #5d656c;
 .label__radio:hover:before {
 	@include sprite($radio-hover);
 }
+
+.label__radio_click:before {
+	@include sprite($radio-checked);
+}
 		
 .label__checkbox:before {
 	@include sprite($box-unchecked);
@@ -149,6 +165,121 @@ $sidebar_color: #5d656c;
 		@include sprite($box-hover);
 }
 
+.label__checkbox_click:before {
+	@include sprite($box-checked);
+}
+
 .acco__content-item_input {
 	display: none;
+}
+
+.acco__reset {
+	margin-bottom: 18px;
+	margin-top: -9px;
+}
+
+.acco__link_colors {
+	padding-top: 14px;
+}
+
+.acco__colors {
+	padding-right: 65px;
+	margin-bottom: -2px;
+}
+
+.acco__item_color {
+	margin-bottom: 3px; 
+}
+
+.acco__colors_item {
+	width: 37px;
+	height: 37px;
+	border: 1px solid #dee1e4;
+	display: inline-block;
+	font-size: 0;
+	margin-right: 18px;
+	margin-bottom: 18px;
+
+	&:hover {
+		border: 1px solid $orange;
+	}
+}
+
+.acco__colors_item0 {
+	background-color: #ffffff;
+}
+
+.acco__colors_item1 {
+	background-color: #cccccc;
+}
+
+.acco__colors_item2 {
+	background-color: #000000;
+}
+
+.acco__colors_item3 {
+	background-color: #0a3153;
+}
+
+.acco__colors_item4 {
+	background-color: #ff1800;
+}
+
+.acco__colors_item5 {
+	background-color: #fff343;
+}
+
+.acco__colors_item6 {
+	background-color: #fb914a;
+}
+
+.acco__colors_item7 {
+	background-color: #92c37c;
+}
+
+.acco__colors_item8 {
+	background-color: #40a6ff;
+}
+
+.acco__colors_item9 {
+	background-color: #9870ad;
+}
+
+.acco__colors_item10 {
+	background-color: #dc78ad;
+}
+
+.acco__colors_item11 {
+	background-color: #7f401d;
+}
+
+.prices {
+	margin-top: 3px;
+}
+
+.price__text, .price__input {
+	display: inline-block;
+}
+
+.price__text {
+	margin-right: 10px;
+}
+
+.price__input {
+	width: 83px;
+	height: 30px;
+	border: 1px solid #ebedef;
+	border-radius: 4px;
+	outline: none;
+	padding-left: 10px;
+}
+
+.price__input_first {
+	margin-right: 45px;
+}
+
+.slider {
+	height: 100%;
+	display: inline-block;
+	width: 100%;
 }

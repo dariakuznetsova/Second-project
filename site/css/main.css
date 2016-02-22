@@ -1,12 +1,12 @@
-.socials, .socials__item, .socials__link, .address-block, .address__map, .address__link, .address__text, .telephone-block, .telephone__picture, .telephone__text, .logo__header-wrapper, .form-nav__header-wrapper, .form__header, .nav__header-wrapper, .nav__item, .logo__link, .products-menu__link, .acco__link {
+.socials, .socials__item-header, .socials__link, .address-block, .address__map, .address__link, .address__text, .telephone-block, .telephone__picture, .telephone__text, .logo__wrapper, .form-nav__header-wrapper, .form__header, .nav__header-wrapper, .nav__item, .logo__link, .products-menu__link, .acco__link, .socials__item-footer, .products-menu__footer-item {
   display: inline-block;
 }
 
-.container:before, .container:after {
+.container:before, .footer__left-right-wrapper:before, .products-menu__footer-list:before, .container:after, .footer__left-right-wrapper:after, .products-menu__footer-list:after {
   content: "";
   display: table;
 }
-.container:after {
+.container:after, .footer__left-right-wrapper:after, .products-menu__footer-list:after {
   clear: both;
 }
 
@@ -131,7 +131,7 @@ The `sprites` mixin generates identical output to the CSS template
   margin: 0;
 }
 
-.socials__item {
+.socials__item-header {
   width: 26px;
   height: 26px;
   margin-right: 12px;
@@ -389,15 +389,17 @@ The `sprites` mixin generates identical output to the CSS template
 }
 
 .section-title {
-  font-family: "opensans-semibold";
+  font-family: "opensans-bold";
   font-size: 20px;
   margin-top: 0;
   margin-bottom: 28px;
   padding-left: 9px;
+  color: #333333;
 }
 
 .container {
   padding-left: 11px;
+  margin-bottom: 25px;
 }
 
 .sidebar {
@@ -462,9 +464,23 @@ The `sprites` mixin generates identical output to the CSS template
   position: relative;
 }
 
-.acco__link:hover:after {
+.up:after {
   background-image: url(../images/sprite2.png);
   background-position: -38px -78px;
+  width: 18px;
+  height: 11px;
+  content: "";
+  display: inline-block;
+  width: 18px;
+  height: 11px;
+  position: absolute;
+  right: 11px;
+  bottom: 19px;
+}
+
+.down:after {
+  background-image: url(../images/sprite2.png);
+  background-position: 0px -78px;
   width: 18px;
   height: 11px;
   content: "";
@@ -524,6 +540,13 @@ The `sprites` mixin generates identical output to the CSS template
   height: 19px;
 }
 
+.label__radio_click:before {
+  background-image: url(../images/sprite2.png);
+  background-position: -39px -39px;
+  width: 19px;
+  height: 19px;
+}
+
 .label__checkbox:before {
   background-image: url(../images/sprite2.png);
   background-position: 0px -39px;
@@ -538,8 +561,125 @@ The `sprites` mixin generates identical output to the CSS template
   height: 19px;
 }
 
+.label__checkbox_click:before {
+  background-image: url(../images/sprite2.png);
+  background-position: 0px 0px;
+  width: 19px;
+  height: 19px;
+}
+
 .acco__content-item_input {
   display: none;
+}
+
+.acco__reset {
+  margin-bottom: 18px;
+  margin-top: -9px;
+}
+
+.acco__link_colors {
+  padding-top: 14px;
+}
+
+.acco__colors {
+  padding-right: 65px;
+  margin-bottom: -2px;
+}
+
+.acco__item_color {
+  margin-bottom: 3px;
+}
+
+.acco__colors_item {
+  width: 37px;
+  height: 37px;
+  border: 1px solid #dee1e4;
+  display: inline-block;
+  font-size: 0;
+  margin-right: 18px;
+  margin-bottom: 18px;
+}
+.acco__colors_item:hover {
+  border: 1px solid #ff6600;
+}
+
+.acco__colors_item0 {
+  background-color: #ffffff;
+}
+
+.acco__colors_item1 {
+  background-color: #cccccc;
+}
+
+.acco__colors_item2 {
+  background-color: #000000;
+}
+
+.acco__colors_item3 {
+  background-color: #0a3153;
+}
+
+.acco__colors_item4 {
+  background-color: #ff1800;
+}
+
+.acco__colors_item5 {
+  background-color: #fff343;
+}
+
+.acco__colors_item6 {
+  background-color: #fb914a;
+}
+
+.acco__colors_item7 {
+  background-color: #92c37c;
+}
+
+.acco__colors_item8 {
+  background-color: #40a6ff;
+}
+
+.acco__colors_item9 {
+  background-color: #9870ad;
+}
+
+.acco__colors_item10 {
+  background-color: #dc78ad;
+}
+
+.acco__colors_item11 {
+  background-color: #7f401d;
+}
+
+.prices {
+  margin-top: 3px;
+}
+
+.price__text, .price__input {
+  display: inline-block;
+}
+
+.price__text {
+  margin-right: 10px;
+}
+
+.price__input {
+  width: 83px;
+  height: 30px;
+  border: 1px solid #ebedef;
+  border-radius: 4px;
+  outline: none;
+  padding-left: 10px;
+}
+
+.price__input_first {
+  margin-right: 45px;
+}
+
+.slider {
+  height: 100%;
+  display: inline-block;
+  width: 100%;
 }
 
 .content {
@@ -551,6 +691,38 @@ The `sprites` mixin generates identical output to the CSS template
   height: 400px;
 }
 
+.section-title__footer {
+  margin-bottom: 18px;
+}
+
+.column {
+  width: 1111px;
+  margin: 0 auto;
+  font-family: "opensans-regular";
+  font-size: 14px;
+  color: #333333;
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+  -webkit-column-gap: 40px;
+  -moz-column-gap: 40px;
+  column-gap: 40px;
+  -webkit-column-width: 530px;
+  -moz-column-width: 530px;
+  column-width: 530px;
+  text-align: justify;
+  text-indent: 37px;
+  padding-left: 10px;
+  vertical-align: top;
+  padding-bottom: 19px;
+}
+
+.column__paragraph {
+  margin-top: 0;
+  line-height: 20px;
+  margin-bottom: 20px;
+}
+
 .footer {
   background: url(/images/background-footer.jpg);
   height: 222px;
@@ -558,4 +730,117 @@ The `sprites` mixin generates identical output to the CSS template
   left: 0;
   bottom: 0;
   width: 100%;
+  padding-top: 35px;
+  font-family: "opensans-regular";
+}
+
+.footer__wrapper {
+  border-bottom: 1px solid #494949;
+  height: 157px;
+}
+
+.footer__left-right-wrapper {
+  width: 1111px;
+  margin: 0 auto;
+}
+
+.footer__left {
+  float: left;
+  padding-top: 36px;
+  padding-left: 12px;
+  width: 50%;
+}
+
+.footer__right {
+  float: right;
+  width: 50%;
+}
+
+.socials__item-footer {
+  width: 43px;
+  height: 43px;
+  margin-left: 22px;
+}
+
+.socials__footer {
+  float: right;
+  padding-right: 5px;
+  margin-bottom: 28px;
+}
+
+.socials__footer-link_fb {
+  background-image: url(../images/sprite.png);
+  background-position: -126px 0px;
+  width: 43px;
+  height: 43px;
+}
+.socials__footer-link_fb:hover {
+  background-image: url(../images/sprite.png);
+  background-position: -63px 0px;
+  width: 43px;
+  height: 43px;
+}
+
+.socials__footer-link_vk {
+  background-image: url(../images/sprite.png);
+  background-position: 0px -63px;
+  width: 43px;
+  height: 43px;
+}
+.socials__footer-link_vk:hover {
+  background-image: url(../images/sprite.png);
+  background-position: -63px -63px;
+  width: 43px;
+  height: 43px;
+}
+
+.socials__footer-link_tw {
+  background-image: url(../images/sprite.png);
+  background-position: 0px 0px;
+  width: 43px;
+  height: 43px;
+}
+.socials__footer-link_tw:hover {
+  background-image: url(../images/sprite.png);
+  background-position: -126px -63px;
+  width: 43px;
+  height: 43px;
+}
+
+.products-menu__footer {
+  clear: both;
+}
+
+.products-menu__footer-list {
+  padding-left: 0;
+  margin-right: -10px;
+}
+
+.products-menu__footer-item {
+  padding-left: 12px;
+  padding-right: 12px;
+  float: right;
+  margin-bottom: 14px;
+}
+
+.products-menu__footer-link {
+  font-size: 14px;
+  color: white;
+  text-decoration: underline;
+}
+.products-menu__footer-link:hover {
+  color: #ff6600;
+}
+
+.footer__down, .footer__text {
+  width: 1111px;
+  margin: 0 auto;
+}
+
+.footer__text {
+  font-size: 12px;
+  color: #d6d6d6;
+  text-align: center;
+  padding-top: 5px;
+  padding-left: 14px;
 }

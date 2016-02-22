@@ -24,10 +24,6 @@
  	-webkit-box-orient:horizontal;
 }
 
-.products-menu__link {
-	@extend %inlineblock;
-}
-
 .products-menu__item {
 	font-family: $opensansreg;
 	font-size: 16px;
@@ -44,6 +40,7 @@
 	padding-top: 15px;
 	height: 54px;
 	width: 100%;
+	@extend %inlineblock;
 
 	&:hover {
 		background-color: #e4e2e2;

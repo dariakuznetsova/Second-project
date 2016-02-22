@@ -3,11 +3,10 @@ header.header
 		.header__wrapper
 			.socials
 				ul.socials__list
-					- var socials = ['fb', 'vk', 'tw']
-					each item in socials
-						li.socials__item
-							a(href="https://vk.com/" target='_blank' class='socials__link_#{item}').socials__link= item
-
+					- var socials = {'fb': 'https://www.facebook.com/', 'vk': 'https://vk.com/', 'tw': 'https://twitter.com/'}
+					- each val, key in socials
+						li.socials__item-header
+							a(href='#{val}' target='_blank' class='socials__link_#{key}').socials__link= key
 			.header__address_wrapper
 				.address-block
 					.address__map
@@ -19,8 +18,8 @@ header.header
 					.telephone__text +7 (921) 123-12-13
 
 	.header__container-second-line
-		.logo__header-wrapper
-			a(href='#').logo__link
+		.logo__wrapper
+			a(href='/').logo__link
 				img(src='images/logo.png' alt='Логотип').logo__img
 		.form-nav__header-wrapper
 			form.form__header
