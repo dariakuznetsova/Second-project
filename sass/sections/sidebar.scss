@@ -123,6 +123,10 @@ $sidebar_color: #5d656c;
 	text-decoration: underline;
 }
 
+.acco__link_hover {
+	background-color: #d9e5ea;
+}
+
 .acco__content-item {
 	margin-bottom: 19px;
 }
@@ -132,6 +136,9 @@ $sidebar_color: #5d656c;
 	position: relative;
 	padding-left: 29px;
 	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
 
 	&:before {
 		content: "";
@@ -170,6 +177,14 @@ $sidebar_color: #5d656c;
 }
 
 .acco__content-item_input {
+	width: 19px;
+	height: 19px;
+	vertical-align: top;
+	margin-right: -24px;
+	margin-top: -1px;
+	z-index: 2;
+	position: relative;
+	outline: none;
 	display: none;
 }
 
@@ -188,7 +203,7 @@ $sidebar_color: #5d656c;
 }
 
 .acco__item_color {
-	margin-bottom: 3px; 
+	padding-bottom: 3px; 
 }
 
 .acco__colors_item {
@@ -255,6 +270,7 @@ $sidebar_color: #5d656c;
 
 .prices {
 	margin-top: 3px;
+	margin-bottom: 18px;
 }
 
 .price__text, .price__input {
@@ -276,10 +292,4 @@ $sidebar_color: #5d656c;
 
 .price__input_first {
 	margin-right: 45px;
-}
-
-.slider {
-	height: 100%;
-	display: inline-block;
-	width: 100%;
 }

@@ -37,11 +37,12 @@ aside.sidebar
 				ul.acco__content
 					li.acco__content-item
 						.prices
-							label.price__text от
-							input(type="text").price__input.price__input_first
-							label.price__text до
-							input(type="text").price__input
-							.slider
+							label(for="from").price__text от
+							input(type="text" id="from" value="0").price__input.price__input_first
+							label(for="to").price__text до
+							input(type="text" id="to" value="30000").price__input
+						.ui-slide
+							div#slider
 
 			li.acco__item.sidebar__item.acco__item_color
 

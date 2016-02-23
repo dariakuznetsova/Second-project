@@ -1,3 +1,4 @@
+
 // Аккордеон
 var acco = (function () {
 
@@ -5,60 +6,147 @@ var acco = (function () {
         _setUpListners();
     };
 
-    /*var arrow = function() {
-        var acco__content = $('.acco__content');
-
-        if (acco__content) {
-            $('.acco__link').hover (function() {
-                $(this).addClass('up');
-                }, function() {
-                 $(this).removeClass('up');
-                });
-            console.log('open')
-        }else if(!acco__content){
-            $('.acco__link').hover (function() {
-                $(this).addClass('down');
-                }, function() {
-                $(this).removeClass('down');
-                });
-            console.log('close') 
-            };
-    };*/
-
     var _setUpListners = function ()  {
-    
+        
         $('a[href="#"]').on ('click', function(e) {
 	       e.preventDefault();
 		});
 
-        $('.acco__link').on ('click', function() {
-            $(this).next().slideToggle();
-            arrow();
-        });
-
-        $('.label').on ('click', function(e) {
-            if($(e).hasClass('label__radio')) {
-                $(this).addClass('label__radio_click');   
+        $('.acco__link').on ('click', function() {         
+            if ($(this).hasClass('up')){
+                $(this).removeClass('up').addClass('down');
+                $(this).addClass('acco__link_hover');
+            }else if($(this).hasClass('down')){
+                $(this).removeClass('down').addClass('up');
+                $(this).removeClass('acco__link_hover');
             };
+            $(this).next().slideToggle();
         });
 
-};
+        
+        /*setTimeout(function() {
+            $('#id1').removeClass('class2').addClass('class1');
+        }, 10000);*/
+
+
+       $('.acco__link').hover (
+            function() {
+                if ($(this).next('.acco__content').css('display') == 'none') {
+                        $(this).removeClass('up');
+                        $(this).addClass('down');
+                        $(this).addClass('acco__link_hover');
+                    }else if($(this).next('.acco__content').css('display') == 'block'){
+                        $(this).removeClass('acco__link_hover');
+                        $(this).removeClass('down');
+                        $(this).addClass('up');
+                    }; 
+            },
+            function () {
+                $(this).removeClass('up');
+                $(this).removeClass('down');
+                $(this).removeClass('acco__link_hover'); 
+            }); 
+    };
+
+   
 	return {
   		init: init, 
   	};
 
 })();
 
-acco.init();
 
-//Слайдер
+// Чекбоксы и reset
+var inputs = (function () {
 
+    var init = function () {
+        _setUpListners();
+    };
 
+    var _setUpListners = function ()  {
+        var checkbox = $('.label__checkbox'),
+            radio = $('.label__radio'),
+            reset = $('.acco__content-link');
 
-var sl = function () {
-    $( ".slider" ).slider({
-        range: true
-    });
-    $( ".slider" ).slider( "option", "range", true );
+        $(checkbox).on('click', function() {
+            if ($(this).hasClass('label__checkbox')) {
+                $(this).removeClass('label__checkbox');
+                $(this).addClass('label__checkbox_click');    
+            }else{
+                $(this).removeClass('label__checkbox_click');
+                $(this).addClass('label__checkbox');
+            };
+        });
+
+        $(radio).on('click', function() {
+            if ($(this).hasClass('label__radio')) {
+                $(this).removeClass('label__radio');
+                $(this).addClass('label__radio_click');    
+            }else{
+                $(this).removeClass('label__radio_click');
+                $(this).addClass('label__radio');
+            };
+        });
+
+        $(reset).on('click', function () {
+            $(this).parent().siblings().children('.label').removeClass('label__checkbox_click');
+            $(this).parent().siblings().children('.label').addClass('label__checkbox');
+        });  
+    };
+
+    return {
+        init: init, 
+    };
+
+})();
+
+if($('.sidebar__acco-form')) {
+    acco.init();
+    inputs.init();   
 };
-sl();
+
+
+
+// Слайдер
+$(function() {
+    $("#slider").slider({
+      range: true,
+      min: 0,
+      max: 30000,
+      values: [0,30000],
+      stop: function(event, ui) {
+        $("#from").val($("#slider").slider("values",0));
+        $("#to").val($("#slider").slider("values",1));
+      },  
+      slide: function( event, ui ) {
+        $("#from").val($("#slider").slider("values",0));
+        $("#to").val($("#slider").slider("values",1));
+      }
+    });
+
+    $("#from").change(function(){
+        var value1=$("#from").val();
+        var value2=$("#to").val();
+
+        if(parseInt(value1) > parseInt(value2)){
+            value1 = value2;
+            $("#from").val(value1);
+        };
+    $("#slider").slider("values",0,value1);    
+    });
+
+    $("#to").change(function(){
+        var value1=$("#from").val();
+        var value2=$("#to").val();
+        
+        if (value2 > 30000) { 
+            value2 = 30000; $("#to").val(30000);
+        };
+
+        if(parseInt(value1) > parseInt(value2)){
+            value2 = value1;
+            $("#to").val(value2);
+        };
+        $("#slider").slider("values",1,value2);
+    });
+});

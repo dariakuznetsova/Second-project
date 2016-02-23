@@ -124,11 +124,13 @@
 									<ul class="acco__content">
 										<li class="acco__content-item">
 											<div class="prices">
-												<label class="price__text">от</label>
-												<input type="text" class="price__input price__input_first">
-												<label class="price__text">до</label>
-												<input type="text" class="price__input">
-												<div class="slider"></div>
+												<label for="from" class="price__text">от</label>
+												<input type="text" id="from" value="0" class="price__input price__input_first">
+												<label for="to" class="price__text">до</label>
+												<input type="text" id="to" value="30000" class="price__input">
+											</div>
+											<div class="ui-slide">
+												<div id="slider"></div>
 											</div>
 										</li>
 									</ul>

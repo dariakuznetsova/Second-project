@@ -383,6 +383,64 @@ The `sprites` mixin generates identical output to the CSS template
   text-decoration: underline;
 }
 
+.ui-slider {
+  position: relative;
+  margin-bottom: 31px;
+}
+
+#slider {
+  width: 273px;
+}
+
+.ui-slider .ui-slider-handle {
+  position: absolute;
+  z-index: 2;
+  width: 20px;
+  height: 20px;
+  background: url(/images/slider.png) no-repeat;
+  cursor: pointer;
+}
+
+.ui-slider .ui-slider-range {
+  position: absolute;
+  z-index: 1;
+  font-size: .7em;
+  display: block;
+  overflow: hidden;
+}
+
+.ui-slider-horizontal {
+  height: 3px;
+}
+
+.ui-slider-horizontal .ui-slider-handle {
+  margin-left: -4px;
+  outline: none;
+  top: 1px;
+}
+
+.ui-slider-horizontal .ui-slider-range {
+  top: 0;
+  height: 100%;
+}
+
+.ui-slider-horizontal .ui-slider-range-min {
+  left: 0;
+}
+
+.ui-slider-horizontal .ui-slider-range-max {
+  right: 0;
+}
+
+.ui-widget-content {
+  background: #dee1e4;
+}
+
+.ui-widget-header {
+  border: 1px solid #ff6600;
+  background: #ff6600;
+}
+
 .sidebar__list, .sidebar__acco-form {
   border: 1px solid #dee1e4;
   border-radius: 5px;
@@ -505,6 +563,10 @@ The `sprites` mixin generates identical output to the CSS template
   text-decoration: underline;
 }
 
+.acco__link_hover {
+  background-color: #d9e5ea;
+}
+
 .acco__content-item {
   margin-bottom: 19px;
 }
@@ -514,6 +576,9 @@ The `sprites` mixin generates identical output to the CSS template
   position: relative;
   padding-left: 29px;
   cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 .label:before {
   content: "";
@@ -569,6 +634,14 @@ The `sprites` mixin generates identical output to the CSS template
 }
 
 .acco__content-item_input {
+  width: 19px;
+  height: 19px;
+  vertical-align: top;
+  margin-right: -24px;
+  margin-top: -1px;
+  z-index: 2;
+  position: relative;
+  outline: none;
   display: none;
 }
 
@@ -587,7 +660,7 @@ The `sprites` mixin generates identical output to the CSS template
 }
 
 .acco__item_color {
-  margin-bottom: 3px;
+  padding-bottom: 3px;
 }
 
 .acco__colors_item {
@@ -653,6 +726,7 @@ The `sprites` mixin generates identical output to the CSS template
 
 .prices {
   margin-top: 3px;
+  margin-bottom: 18px;
 }
 
 .price__text, .price__input {
@@ -674,12 +748,6 @@ The `sprites` mixin generates identical output to the CSS template
 
 .price__input_first {
   margin-right: 45px;
-}
-
-.slider {
-  height: 100%;
-  display: inline-block;
-  width: 100%;
 }
 
 .content {
