@@ -1,9 +1,453 @@
 .content {
 	width: 743px;
 	display: inline-block;
-	vertical-align: top;
 	float: right;
+}
 
-	border: 1px solid black;
-	height: 400px;
+.content__sort-block {
+	background-color: #e4ebee;
+	border: 1px solid #dee1e4;
+	height: 53px;
+	border-radius: 5px;
+	font-family: $opensansreg;
+	font-size: 14px;
+	color: #5d656c;
+	padding-left: 21px;
+	margin-bottom: 20px;
+}
+
+.select__wrapper, .catalogue__ul {
+	display: inline-block;
+}
+
+.select__wrapper {
+	position: relative;
+}
+
+.select__text, .select, .catalogue__ul, .catalogue__text {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.select__text {
+	margin-right: 6px;
+	margin-top: 13px;
+}
+
+.select {
+	width: 143px;
+	height: 26px;
+	border: 1px solid #dee1e4;
+	border-radius: 3px;
+	background-color: white;
+	position: absolute;
+	left: 120px;
+	top: 12px;
+}
+
+.catalogue__wrapper {
+	float: right;	
+}
+
+.catalogue__ul {
+	text-align: right;
+	padding-left: 0;
+	height: 52px;
+	font-size: 0;
+}
+
+.catalogue__text {
+	margin-right: 11px;
+	margin-bottom: 6px;
+}
+
+.catalogue__li {
+	display: inline-block;
+	width: 52px;
+	height: 52px;
+	border-left: 1px solid #dee1e4;
+}
+
+.catalogue__link {
+	display: inline-block;
+	text-indent: 100%;
+	width: 52px;
+	height: 52px;
+  	white-space: nowrap;
+  	overflow: hidden;
+  	font-size: 14px;
+}
+
+.sprite__block {
+	margin-left: 18px;
+	margin-right: 0;
+}
+
+.sprite__block_one {
+	@include sprite($list1);
+
+	&:hover {
+		@include sprite($list1-hover);	
+	}
+}
+
+.sprite__block_two {
+	@include sprite($list2);
+
+	&:hover {
+		@include sprite($line2-hover);	
+	}
+}
+
+.sprite__block_three {
+	@include sprite($list3);
+
+	&:hover {
+		@include sprite($list3-hover);	
+	}
+}
+
+
+/*Самый подробный вид*/
+
+.content__goods {
+	border: 1px solid #dfe2e5;
+	border-radius: 5px;
+	background-color: #fbfbfb;
+}
+
+.content__goods_list {
+	padding-left: 0;
+}
+
+/*.content__goods_item-page2 {
+	padding-left: 22px;
+	padding-top: 19px;
+	height: 245px;
+	padding-right: 26px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #dfe2e5;
+}*/
+
+/*.goods__photo_page2, .goods__info_page2, .goods__buy-info_page2 {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.goods__info_page2 {
+	width: 390px;
+	margin-top: 5px;
+	margin-left: 20px;
+}
+
+.goods__buy-info_page2 {
+	height: 100%;
+	width: 127px;
+	float: right;
+	border-left: 1px solid #dee1e4;
+	padding-left: 24px;
+}*/
+
+.goods__photo {
+	width: 136px;
+
+}
+
+.goods__photo_list {
+	padding-left: 0;
+	font-size: 0;
+}
+
+.goods__photo_main {
+	width: 136px;
+	height: 136px;
+	border: 1px solid #dfe2e5;
+	border-radius: 2px;
+	background-color: white;
+	margin-bottom: 15px;
+	cursor: pointer;
+
+	&:hover {
+		border: 1px solid $orange;
+	}
+}
+
+.goods__photo_small {
+	width: 34px;
+	height: 34px;
+	border: 1px solid #dfe2e5;
+	border-radius: 2px;
+	display: inline-block;
+	background-color: white;
+	margin-right: 17px;
+	position: relative;
+	cursor: pointer;
+
+	&:hover {
+		border: 1px solid $orange;
+	}
+}
+
+.goods__photo_main-wrapper {
+	margin-top: 6px;
+	margin-left: 18px;
+}
+
+.goods__small_wrapper {
+	position: absolute;
+	left: 18%;
+	top: 5%;
+}
+
+.goods__photo_main-samsung {
+	@include sprite($samsung);
+}
+
+.goods__photo_small-samsung1 {
+	@include sprite($samsung1);
+}
+
+.goods__photo_small-samsung2 {
+	@include sprite($samsung2);
+}
+
+.goods__photo_small-samsung3 {
+	@include sprite($samsung3);
+}
+
+.goods__photo_small:last-child {
+	margin-right: 0;
+}
+
+.goods__photo_main-lumia640 {
+	@include sprite($lumia640);
+}
+
+.goods__photo_small-lumia640-1 {
+	@include sprite($lumia640-1);
+}
+
+.goods__photo_small-lumia640-2 {
+	@include sprite($lumia640-2);
+}
+
+.goods__photo_small-lumia640-3 {
+	@include sprite($lumia640-3);
+}
+
+.goods__photo_main-archos {
+	@include sprite($archos);
+}
+
+.goods__photo_small-archos1 {
+	@include sprite($archos1);
+}
+
+.goods__photo_small-archos2 {
+	@include sprite($archos2);
+}
+
+.goods__photo_small-archos3 {
+	@include sprite($archos3);
+}
+
+.goods__photo_main-philips {
+	@include sprite($philips);
+}
+
+.goods__photo_small-philips1 {
+	@include sprite($philips1);
+}
+
+.goods__photo_small-philips2 {
+	@include sprite($philips2);
+}
+
+.goods__photo_small-philips3 {
+	@include sprite($philips3);
+}
+
+.goods__photo_main-lumia430 {
+	@include sprite($lumia430);
+}
+
+.goods__photo_small-lumia430-1 {
+	@include sprite($lumia430-1);
+}
+
+.goods__photo_small-lumia430-2 {
+	@include sprite($lumia430-2);
+}
+
+.goods__photo_small-lumia430-3 {
+	@include sprite($lumia430-3);
+}
+
+.goods__photo_main-senseit {
+	@include sprite($sens);
+}
+
+.goods__photo_small-senseit1 {
+	@include sprite($sens1);
+}
+
+.goods__photo_small-senseit2 {
+	@include sprite($sens2);
+}
+
+.goods__photo_small-senseit3 {
+	@include sprite($sens3);
+}
+
+.goods__photo_main-hs {
+	@include sprite($hs);
+}
+
+.goods__photo_small-hs1 {
+	@include sprite($hs1);
+}
+
+.goods__photo_small-hs2 {
+	@include sprite($hs2);
+}
+
+.goods__photo_small-hs3 {
+	@include sprite($hs3);
+}
+
+.mark {
+	font-family: $opensanssb;
+	font-size: 12px;
+	color: #878787;
+	display: none;
+}
+
+/*.mark_page2 {
+	margin-top: 7px;
+	margin-left: 13px;	
+}*/
+
+.mark__span {
+	font-family: $opensansb;
+	font-size: 14px;
+	color: $font-color;
+	white-space: pre;
+}
+
+.goods__title {
+	font-family: $opensansb;
+	font-size: 16px;
+	color: #121212;
+}
+
+.goods__text {
+	font-family: $opensansreg;
+	font-size: 14px;
+	color: $font-color;
+	margin-bottom: 13px;
+	margin-top: 20px;
+	display: none;
+}
+
+.goods__stars {
+	display: inline-block;
+}
+
+.goods__stars_one {
+	@include sprite($star-red);
+}
+
+.goods__stars_two {
+	@include sprite($star-red);
+}
+
+.goods__stars_three {
+	@include sprite($star-red);
+}
+
+.goods__stars_four {
+	@include sprite($star-red);
+}
+
+.goods__stars_five {
+	@include sprite($star-gray);
+}
+
+.goods__stars_number {
+	width: 27px;
+	height: 15px;
+	background-color: #b5beca;
+	border-radius: 8px;
+	color: #fbfbfb;
+	font-family: $opensansb;
+	font-size: 12px;
+	text-align: center;
+	display: inline-block;
+	line-height: 1.3;
+	vertical-align: middle;
+	margin-left: 2px;
+}
+
+.goods__price {
+	font-family: $opensansb;
+	font-size: 20px;
+	color: $font-color;
+}
+
+/*.goods__price_page2 {
+	padding-left: 24px;
+	padding-top: 2px;
+	margin-bottom: 124px;
+}*/
+
+.price__span {
+	margin-right: 4px;
+}
+
+.rouble-sign {
+	width: 10px;
+}
+
+.goods__basket {
+	width: 103px;
+	height: 33px;
+	background-color: $orange;
+	font-family: $opensansb;
+	font-size: 14px;
+	color: #fff5ee;
+	border-radius: 5px;
+	text-align: center;
+	outline: none;
+	border: none;
+}
+
+/*.goods__basket_page2 {
+	margin-bottom: 5px;
+}
+
+.goods__available_page2 {
+	margin-left: 21px;
+}*/
+
+.sphere, .goods__available_text  {
+	display: inline-block;
+}
+
+.sphere {
+	width: 7px;
+	height: 7px;
+	border-radius: 50%;
+	background-color: #60ac49;
+}
+
+.goods__available_text {
+	font-family: $opensansb;
+	font-size: 12px;
+	color: #7f7f7f;
+}
+
+
+/*Страница 3*/
+.content__goods_item-page3 {
+	display: inline-block;
 }

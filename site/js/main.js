@@ -20,14 +20,8 @@ var acco = (function () {
                 $(this).removeClass('down').addClass('up');
                 $(this).removeClass('acco__link_hover');
             };
-            $(this).next().slideToggle();
+            $(this).next().stop().slideToggle();
         });
-
-        
-        /*setTimeout(function() {
-            $('#id1').removeClass('class2').addClass('class1');
-        }, 10000);*/
-
 
        $('.acco__link').hover (
             function() {
@@ -135,18 +129,28 @@ $(function() {
     $("#slider").slider("values",0,value1);    
     });
 
-    $("#to").change(function(){
-        var value1=$("#from").val();
-        var value2=$("#to").val();
-        
-        if (value2 > 30000) { 
-            value2 = 30000; $("#to").val(30000);
-        };
-
-        if(parseInt(value1) > parseInt(value2)){
-            value2 = value1;
-            $("#to").val(value2);
-        };
-        $("#slider").slider("values",1,value2);
-    });
 });
+
+
+//Смена состояний
+/*var main_menu = (function () {
+
+    var init = function () {
+        _setUpListners();
+    };
+
+    var _setUpListners = function ()  {
+
+        $('.catalogue__link_one').on ('click', function() {         
+            $('.class').removeClass('class1 class2 class3');
+        });
+
+       
+    };
+
+   
+    return {
+        init: init, 
+    };
+
+})();*/

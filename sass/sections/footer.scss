@@ -77,13 +77,13 @@
 	padding-left: 0;
 	@extend %clearfix;
 	margin-right: -10px;
+	text-align: right;
 }
 
 .products-menu__footer-item {
 	@extend %inlineblock; 
 	padding-left: 12px;
 	padding-right: 12px;
-	float: right;
 	margin-bottom: 14px;
 }
 

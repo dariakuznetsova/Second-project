@@ -18,6 +18,10 @@
   "dependencies": {
     "jquery": "1.12.0",
     "normalize-css": "normalize.css#^3.0.3",
-    "modernizer": "^2.8.2"
+    "modernizer": "^2.8.2",
+    "select2": "^4.0.1"
+  },
+  "devDependencies": {
+    "select2": "^4.0.1"
   }
 }

@@ -45,10 +45,10 @@ gulp.task('compass', function() {
 
 // Sprites
 gulp.task('sprite', function () {
-  var spriteData = gulp.src('sprites/checkbox/*.png').pipe(spritesmith({
-    imgName: 'sprite2.png',
-    cssName: 'sprite2.scss',
-    padding: 20
+  var spriteData = gulp.src('sprites/tels/*.png').pipe(spritesmith({
+    imgName: 'sprite4.png',
+    cssName: 'sprite4.scss',
+    padding: 50
   }));
   return spriteData.pipe(gulp.dest('site/images'));
 });

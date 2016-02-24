@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .socials, .socials__item-header, .socials__link, .address-block, .address__map, .address__link, .address__text, .telephone-block, .telephone__picture, .telephone__text, .logo__wrapper, .form-nav__header-wrapper, .form__header, .nav__header-wrapper, .nav__item, .logo__link, .products-menu__link, .acco__link, .socials__item-footer, .products-menu__footer-item {
   display: inline-block;
 }
@@ -70,6 +71,44 @@ ul {
   font-style: normal;
 }
 /* Sections */
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+
+Here are example usages in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+`display: inline-block` sprite:
+<img class="icon-home" />
+*/
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
 /*
 SCSS variables are information about icon's compiled state, stored under its original file name
 
@@ -753,10 +792,558 @@ The `sprites` mixin generates identical output to the CSS template
 .content {
   width: 743px;
   display: inline-block;
-  vertical-align: top;
   float: right;
-  border: 1px solid black;
-  height: 400px;
+}
+
+.content__sort-block {
+  background-color: #e4ebee;
+  border: 1px solid #dee1e4;
+  height: 53px;
+  border-radius: 5px;
+  font-family: "opensans-regular";
+  font-size: 14px;
+  color: #5d656c;
+  padding-left: 21px;
+  margin-bottom: 20px;
+}
+
+.select__wrapper, .catalogue__ul {
+  display: inline-block;
+}
+
+.select__wrapper {
+  position: relative;
+}
+
+.select__text, .select, .catalogue__ul, .catalogue__text {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.select__text {
+  margin-right: 6px;
+  margin-top: 13px;
+}
+
+.select {
+  width: 143px;
+  height: 26px;
+  border: 1px solid #dee1e4;
+  border-radius: 3px;
+  background-color: white;
+  position: absolute;
+  left: 120px;
+  top: 12px;
+}
+
+.catalogue__wrapper {
+  float: right;
+}
+
+.catalogue__ul {
+  text-align: right;
+  padding-left: 0;
+  height: 52px;
+  font-size: 0;
+}
+
+.catalogue__text {
+  margin-right: 11px;
+  margin-bottom: 6px;
+}
+
+.catalogue__li {
+  display: inline-block;
+  width: 52px;
+  height: 52px;
+  border-left: 1px solid #dee1e4;
+}
+
+.catalogue__link {
+  display: inline-block;
+  text-indent: 100%;
+  width: 52px;
+  height: 52px;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 14px;
+}
+
+.sprite__block {
+  margin-left: 18px;
+  margin-right: 0;
+}
+
+.sprite__block_one {
+  background-image: url(../images/sprite3.png);
+  background-position: -250px 0px;
+  width: 16px;
+  height: 16px;
+}
+.sprite__block_one:hover {
+  background-image: url(../images/sprite3.png);
+  background-position: -179px -103px;
+  width: 16px;
+  height: 16px;
+}
+
+.sprite__block_two {
+  background-image: url(../images/sprite3.png);
+  background-position: -173px -196px;
+  width: 16px;
+  height: 16px;
+}
+.sprite__block_two:hover {
+  background-image: url(../images/sprite3.png);
+  background-position: -209px -196px;
+  width: 16px;
+  height: 16px;
+}
+
+.sprite__block_three {
+  background-image: url(../images/sprite3.png);
+  background-position: -250px -72px;
+  width: 16px;
+  height: 16px;
+}
+.sprite__block_three:hover {
+  background-image: url(../images/sprite3.png);
+  background-position: -250px -36px;
+  width: 16px;
+  height: 16px;
+}
+
+/*╨б╨░╨╝╤Л╨╣ ╨┐╨╛╨┤╤А╨╛╨▒╨╜╤Л╨╣ ╨▓╨╕╨┤*/
+.content__goods {
+  border: 1px solid #dfe2e5;
+  border-radius: 5px;
+  background-color: #fbfbfb;
+}
+
+.content__goods_list {
+  padding-left: 0;
+}
+
+/*.content__goods_item-page2 {
+	padding-left: 22px;
+	padding-top: 19px;
+	height: 245px;
+	padding-right: 26px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #dfe2e5;
+}*/
+/*.goods__photo_page2, .goods__info_page2, .goods__buy-info_page2 {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.goods__info_page2 {
+	width: 390px;
+	margin-top: 5px;
+	margin-left: 20px;
+}
+
+.goods__buy-info_page2 {
+	height: 100%;
+	width: 127px;
+	float: right;
+	border-left: 1px solid #dee1e4;
+	padding-left: 24px;
+}*/
+.goods__photo {
+  width: 136px;
+}
+
+.goods__photo_list {
+  padding-left: 0;
+  font-size: 0;
+}
+
+.goods__photo_main {
+  width: 136px;
+  height: 136px;
+  border: 1px solid #dfe2e5;
+  border-radius: 2px;
+  background-color: white;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+.goods__photo_main:hover {
+  border: 1px solid #ff6600;
+}
+
+.goods__photo_small {
+  width: 34px;
+  height: 34px;
+  border: 1px solid #dfe2e5;
+  border-radius: 2px;
+  display: inline-block;
+  background-color: white;
+  margin-right: 17px;
+  position: relative;
+  cursor: pointer;
+}
+.goods__photo_small:hover {
+  border: 1px solid #ff6600;
+}
+
+.goods__photo_main-wrapper {
+  margin-top: 6px;
+  margin-left: 18px;
+}
+
+.goods__small_wrapper {
+  position: absolute;
+  left: 18%;
+  top: 5%;
+}
+
+.goods__photo_main-samsung {
+  background-image: url(../images/sprite4.png);
+  background-position: 0px -341px;
+  width: 93px;
+  height: 123px;
+}
+
+.goods__photo_small-samsung1 {
+  background-image: url(../images/sprite3.png);
+  background-position: -42px -48px;
+  width: 22px;
+  height: 28px;
+}
+
+.goods__photo_small-samsung2 {
+  background-image: url(../images/sprite3.png);
+  background-position: 0px -97px;
+  width: 19px;
+  height: 29px;
+}
+
+.goods__photo_small-samsung3 {
+  background-image: url(../images/sprite3.png);
+  background-position: -36px -146px;
+  width: 16px;
+  height: 30px;
+}
+
+.goods__photo_small:last-child {
+  margin-right: 0;
+}
+
+.goods__photo_main-lumia640 {
+  background-image: url(../images/sprite4.png);
+  background-position: -486px 0px;
+  width: 97px;
+  height: 119px;
+}
+
+.goods__photo_small-lumia640-1 {
+  background-image: url(../images/sprite3.png);
+  background-position: -94px 0px;
+  width: 22px;
+  height: 28px;
+}
+
+.goods__photo_small-lumia640-2 {
+  background-image: url(../images/sprite3.png);
+  background-position: -39px -97px;
+  width: 19px;
+  height: 29px;
+}
+
+.goods__photo_small-lumia640-3 {
+  background-image: url(../images/sprite3.png);
+  background-position: 0px -196px;
+  width: 15px;
+  height: 29px;
+}
+
+.goods__photo_main-archos {
+  background-image: url(../images/sprite4.png);
+  background-position: -633px 0px;
+  width: 81px;
+  height: 126px;
+}
+
+.goods__photo_small-archos1 {
+  background-image: url(../images/sprite3.png);
+  background-position: -94px -48px;
+  width: 19px;
+  height: 29px;
+}
+
+.goods__photo_small-archos2 {
+  background-image: url(../images/sprite3.png);
+  background-position: -215px -100px;
+  width: 15px;
+  height: 29px;
+}
+
+.goods__photo_small-archos3 {
+  background-image: url(../images/sprite3.png);
+  background-position: -215px -51px;
+  width: 15px;
+  height: 29px;
+}
+
+.goods__photo_main-philips {
+  background-image: url(../images/sprite4.png);
+  background-position: 0px -168px;
+  width: 107px;
+  height: 123px;
+}
+
+.goods__photo_small-philips1 {
+  background-image: url(../images/sprite3.png);
+  background-position: -136px 0px;
+  width: 23px;
+  height: 26px;
+}
+
+.goods__photo_small-philips2 {
+  background-image: url(../images/sprite3.png);
+  background-position: -139px -196px;
+  width: 14px;
+  height: 28px;
+}
+
+.goods__photo_small-philips3 {
+  background-image: url(../images/sprite3.png);
+  background-position: -144px -146px;
+  width: 16px;
+  height: 28px;
+}
+
+.goods__photo_main-lumia430 {
+  background-image: url(../images/sprite4.png);
+  background-position: -157px -168px;
+  width: 99px;
+  height: 121px;
+}
+
+.goods__photo_small-lumia430-1 {
+  background-image: url(../images/sprite3.png);
+  background-position: -78px -97px;
+  width: 21px;
+  height: 26px;
+}
+
+.goods__photo_small-lumia430-2 {
+  background-image: url(../images/sprite3.png);
+  background-position: -180px -146px;
+  width: 15px;
+  height: 28px;
+}
+
+.goods__photo_small-lumia430-3 {
+  background-image: url(../images/sprite3.png);
+  background-position: -108px -146px;
+  width: 16px;
+  height: 28px;
+}
+
+.goods__photo_main-senseit {
+  background-image: url(../images/sprite4.png);
+  background-position: -168px 0px;
+  width: 120px;
+  height: 116px;
+}
+
+.goods__photo_small-senseit1 {
+  background-image: url(../images/sprite3.png);
+  background-position: -48px 0px;
+  width: 26px;
+  height: 26px;
+}
+
+.goods__photo_small-senseit2 {
+  background-image: url(../images/sprite3.png);
+  background-position: -105px -196px;
+  width: 14px;
+  height: 29px;
+}
+
+.goods__photo_small-senseit3 {
+  background-image: url(../images/sprite3.png);
+  background-position: -70px -196px;
+  width: 15px;
+  height: 29px;
+}
+
+.goods__photo_main-hs {
+  background-image: url(../images/sprite4.png);
+  background-position: -338px 0px;
+  width: 98px;
+  height: 127px;
+}
+
+.goods__photo_small-hs1 {
+  background-image: url(../images/sprite3.png);
+  background-position: 0px -48px;
+  width: 22px;
+  height: 29px;
+}
+
+.goods__photo_small-hs2 {
+  background-image: url(../images/sprite3.png);
+  background-position: 0px -146px;
+  width: 16px;
+  height: 30px;
+}
+
+.goods__photo_small-hs3 {
+  background-image: url(../images/sprite3.png);
+  background-position: -179px 0px;
+  width: 16px;
+  height: 32px;
+}
+
+.mark {
+  font-family: "opensans-semibold";
+  font-size: 12px;
+  color: #878787;
+  display: none;
+}
+
+/*.mark_page2 {
+	margin-top: 7px;
+	margin-left: 13px;	
+}*/
+.mark__span {
+  font-family: "opensans-bold";
+  font-size: 14px;
+  color: #333333;
+  white-space: pre;
+}
+
+.goods__title {
+  font-family: "opensans-bold";
+  font-size: 16px;
+  color: #121212;
+}
+
+.goods__text {
+  font-family: "opensans-regular";
+  font-size: 14px;
+  color: #333333;
+  margin-bottom: 13px;
+  margin-top: 20px;
+  display: none;
+}
+
+.goods__stars {
+  display: inline-block;
+}
+
+.goods__stars_one {
+  background-image: url(../images/sprite3.png);
+  background-position: -250px -108px;
+  width: 16px;
+  height: 15px;
+}
+
+.goods__stars_two {
+  background-image: url(../images/sprite3.png);
+  background-position: -250px -108px;
+  width: 16px;
+  height: 15px;
+}
+
+.goods__stars_three {
+  background-image: url(../images/sprite3.png);
+  background-position: -250px -108px;
+  width: 16px;
+  height: 15px;
+}
+
+.goods__stars_four {
+  background-image: url(../images/sprite3.png);
+  background-position: -250px -108px;
+  width: 16px;
+  height: 15px;
+}
+
+.goods__stars_five {
+  background-image: url(../images/sprite3.png);
+  background-position: -121px -93px;
+  width: 21px;
+  height: 20px;
+}
+
+.goods__stars_number {
+  width: 27px;
+  height: 15px;
+  background-color: #b5beca;
+  border-radius: 8px;
+  color: #fbfbfb;
+  font-family: "opensans-bold";
+  font-size: 12px;
+  text-align: center;
+  display: inline-block;
+  line-height: 1.3;
+  vertical-align: middle;
+  margin-left: 2px;
+}
+
+.goods__price {
+  font-family: "opensans-bold";
+  font-size: 20px;
+  color: #333333;
+}
+
+/*.goods__price_page2 {
+	padding-left: 24px;
+	padding-top: 2px;
+	margin-bottom: 124px;
+}*/
+.price__span {
+  margin-right: 4px;
+}
+
+.rouble-sign {
+  width: 10px;
+}
+
+.goods__basket {
+  width: 103px;
+  height: 33px;
+  background-color: #ff6600;
+  font-family: "opensans-bold";
+  font-size: 14px;
+  color: #fff5ee;
+  border-radius: 5px;
+  text-align: center;
+  outline: none;
+  border: none;
+}
+
+/*.goods__basket_page2 {
+	margin-bottom: 5px;
+}
+
+.goods__available_page2 {
+	margin-left: 21px;
+}*/
+.sphere, .goods__available_text {
+  display: inline-block;
+}
+
+.sphere {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #60ac49;
+}
+
+.goods__available_text {
+  font-family: "opensans-bold";
+  font-size: 12px;
+  color: #7f7f7f;
+}
+
+/*╨б╤В╤А╨░╨╜╨╕╤Ж╨░ 3*/
+.content__goods_item-page3 {
+  display: inline-block;
 }
 
 .section-title__footer {
@@ -882,12 +1469,12 @@ The `sprites` mixin generates identical output to the CSS template
 .products-menu__footer-list {
   padding-left: 0;
   margin-right: -10px;
+  text-align: right;
 }
 
 .products-menu__footer-item {
   padding-left: 12px;
   padding-right: 12px;
-  float: right;
   margin-bottom: 14px;
 }
 
