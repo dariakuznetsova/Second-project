@@ -5,6 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width">
 		<link rel="stylesheet" href="bower/normalize-css/normalize.css">
+		<link href="bower/select2/dist/css/select2.min.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 		<script src="bower/modernizer/modernizr.js"></script>
 		<title>Мобильные телефоны</title>
@@ -183,7 +184,10 @@
 						<div class="content__sort-block">
 							<div class="select__wrapper">
 								<div class="select__text">Сортировать по</div>
-								<div class="select"></div>
+								<div class="select2">
+									<option value="price">По цене</option>
+									<option value="popularity">По популярности</option>
+								</div>
 							</div>
 							<div class="catalogue__wrapper">
 								<div class="catalogue__text">Вид каталога</div>
@@ -960,6 +964,7 @@
 			</footer>
 		</div>
 		<script src="bower/jquery/dist/jquery.min.js"></script>
+		<script src="bower/select2/dist/js/select2.min.js"></script>
 		<script src="bower/slider/jquery-ui.min.js"></script>
 		<script src="js/main.js"></script>
 	</body>

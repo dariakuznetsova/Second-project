@@ -815,7 +815,7 @@ The `sprites` mixin generates identical output to the CSS template
   position: relative;
 }
 
-.select__text, .select, .catalogue__ul, .catalogue__text {
+.select, .catalogue__ul, .catalogue__text {
   display: inline-block;
   vertical-align: middle;
 }
@@ -823,17 +823,13 @@ The `sprites` mixin generates identical output to the CSS template
 .select__text {
   margin-right: 6px;
   margin-top: 13px;
+  display: inline-block;
 }
 
-.select {
-  width: 143px;
-  height: 26px;
-  border: 1px solid #dee1e4;
-  border-radius: 3px;
-  background-color: white;
-  position: absolute;
-  left: 120px;
-  top: 12px;
+.select2 {
+  font-family: "opensans-light";
+  font-size: 14px;
+  color: #7f7f7f;
 }
 
 .catalogue__wrapper {

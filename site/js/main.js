@@ -231,3 +231,10 @@ var main_menu = (function () {
 })();
 
 main_menu.init();
+
+
+
+$(document).ready(function() {
+    $('.select2').select2();
+    minimumResultsForSearch: Infinity
+});
