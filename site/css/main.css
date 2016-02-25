@@ -879,8 +879,12 @@ The `sprites` mixin generates identical output to the CSS template
   background-position: -250px 0px;
   width: 16px;
   height: 16px;
+  /*&:hover {
+  	@include sprite($list1-hover);	
+  }*/
 }
-.sprite__block_one:hover {
+
+.sprite__block_one-hover {
   background-image: url(../images/sprite3.png);
   background-position: -179px -103px;
   width: 16px;
@@ -892,8 +896,12 @@ The `sprites` mixin generates identical output to the CSS template
   background-position: -173px -196px;
   width: 16px;
   height: 16px;
+  /*&:hover {
+  	@include sprite($line2-hover);	
+  }*/
 }
-.sprite__block_two:hover {
+
+.sprite__block_two-hover {
   background-image: url(../images/sprite3.png);
   background-position: -209px -196px;
   width: 16px;
@@ -905,12 +913,20 @@ The `sprites` mixin generates identical output to the CSS template
   background-position: -250px -72px;
   width: 16px;
   height: 16px;
+  /*&:hover {
+  	@include sprite($list3-hover);	
+  }*/
 }
-.sprite__block_three:hover {
+
+.sprite__block_three-hover {
   background-image: url(../images/sprite3.png);
   background-position: -250px -36px;
   width: 16px;
   height: 16px;
+}
+
+.content__goods_item:hover {
+  box-shadow: 0 0 10px #a9acae;
 }
 
 /*╨б╨░╨╝╤Л╨╣ ╨┐╨╛╨┤╤А╨╛╨▒╨╜╤Л╨╣ ╨▓╨╕╨┤*/
@@ -924,34 +940,40 @@ The `sprites` mixin generates identical output to the CSS template
   padding-left: 0;
 }
 
-/*.content__goods_item-page2 {
-	padding-left: 22px;
-	padding-top: 19px;
-	height: 245px;
-	padding-right: 26px;
-	padding-bottom: 20px;
-	border-bottom: 1px solid #dfe2e5;
-}*/
-/*.goods__photo_page2, .goods__info_page2, .goods__buy-info_page2 {
-	display: inline-block;
-	vertical-align: top;
+.content__goods_item-page2 {
+  padding-left: 22px;
+  padding-top: 19px;
+  height: 245px;
+  padding-right: 26px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #dfe2e5;
+}
+
+.goods__photo_page2, .goods__info_page2, .goods__buy-info_page2 {
+  display: inline-block;
+  vertical-align: top;
 }
 
 .goods__info_page2 {
-	width: 390px;
-	margin-top: 5px;
-	margin-left: 20px;
+  width: 390px;
+  margin-top: 5px;
+  margin-left: 20px;
 }
 
 .goods__buy-info_page2 {
-	height: 100%;
-	width: 127px;
-	float: right;
-	border-left: 1px solid #dee1e4;
-	padding-left: 24px;
-}*/
+  height: 100%;
+  width: 127px;
+  float: right;
+  border-left: 1px solid #dee1e4;
+  padding-left: 24px;
+}
+
 .goods__photo {
   width: 136px;
+}
+
+.goods__photo_main, .goods__photo_list {
+  /*display: none;*/
 }
 
 .goods__photo_list {
@@ -1198,17 +1220,73 @@ The `sprites` mixin generates identical output to the CSS template
   height: 32px;
 }
 
+.goods__photo_main-alc {
+  background-image: url(../images/sprite4.png);
+  background-position: -486px -169px;
+  width: 90px;
+  height: 122px;
+}
+
+.goods__photo_small-alc1 {
+  background-image: url(../images/sprite3.png);
+  background-position: -136px -46px;
+  width: 20px;
+  height: 28px;
+}
+
+.goods__photo_small-alc2 {
+  background-image: url(../images/sprite3.png);
+  background-position: -72px -146px;
+  width: 16px;
+  height: 29px;
+}
+
+.goods__photo_small-alc3 {
+  background-image: url(../images/sprite3.png);
+  background-position: -35px -196px;
+  width: 15px;
+  height: 29px;
+}
+
+.goods__photo_main-fly {
+  background-image: url(../images/sprite4.png);
+  background-position: 0px 0px;
+  width: 118px;
+  height: 118px;
+}
+
+.goods__photo_small-fly1 {
+  background-image: url(../images/sprite3.png);
+  background-position: 0px 0px;
+  width: 28px;
+  height: 28px;
+}
+
+.goods__photo_small-fly2 {
+  background-image: url(../images/sprite3.png);
+  background-position: -179px -52px;
+  width: 16px;
+  height: 31px;
+}
+
+.goods__photo_small-fly3 {
+  background-image: url(../images/sprite3.png);
+  background-position: -215px 0px;
+  width: 15px;
+  height: 31px;
+}
+
 .mark {
   font-family: "opensans-semibold";
   font-size: 12px;
   color: #878787;
-  display: none;
 }
 
-/*.mark_page2 {
-	margin-top: 7px;
-	margin-left: 13px;	
-}*/
+.mark_page2 {
+  margin-top: 7px;
+  margin-left: 13px;
+}
+
 .mark__span {
   font-family: "opensans-bold";
   font-size: 14px;
@@ -1228,7 +1306,11 @@ The `sprites` mixin generates identical output to the CSS template
   color: #333333;
   margin-bottom: 13px;
   margin-top: 20px;
-  display: none;
+  /*display: none;*/
+}
+
+.goods__stars_list {
+  /*display: none;*/
 }
 
 .goods__stars {
@@ -1291,11 +1373,12 @@ The `sprites` mixin generates identical output to the CSS template
   color: #333333;
 }
 
-/*.goods__price_page2 {
-	padding-left: 24px;
-	padding-top: 2px;
-	margin-bottom: 124px;
-}*/
+.goods__price_page2 {
+  padding-left: 24px;
+  padding-top: 2px;
+  margin-bottom: 124px;
+}
+
 .price__span {
   margin-right: 4px;
 }
@@ -1316,14 +1399,18 @@ The `sprites` mixin generates identical output to the CSS template
   outline: none;
   border: none;
 }
+.goods__basket:hover {
+  background-color: #fd7215;
+}
 
-/*.goods__basket_page2 {
-	margin-bottom: 5px;
+.goods__basket_page2 {
+  margin-bottom: 5px;
 }
 
 .goods__available_page2 {
-	margin-left: 21px;
-}*/
+  margin-left: 21px;
+}
+
 .sphere, .goods__available_text {
   display: inline-block;
 }
@@ -1342,8 +1429,152 @@ The `sprites` mixin generates identical output to the CSS template
 }
 
 /*╨б╤В╤А╨░╨╜╨╕╤Ж╨░ 3*/
+.content__goods_page3 {
+  background-color: #f4f4f4;
+  border: none;
+  text-align: justify;
+}
+
 .content__goods_item-page3 {
   display: inline-block;
+  width: 235px;
+  border: 1px solid #dee1e4;
+  border-radius: 5px;
+  background-color: #fbfbfb;
+  height: 513px;
+  vertical-align: top;
+  margin-bottom: 19px;
+  padding-top: 19px;
+}
+
+.content__goods_item-page3:nth-child(7) {
+  margin-right: 14px;
+}
+
+.content__goods_item-page3:nth-child(8) {
+  margin-right: 11px;
+}
+
+.goods__info_page3 {
+  margin: 0 auto;
+}
+
+.goods__photo_page3 {
+  margin: 0 auto;
+  margin-bottom: 12px;
+}
+
+.goods__title_page3 {
+  font-size: 15px;
+  text-align: center;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 42px;
+}
+
+.goods__table {
+  font-family: "opensans-regular";
+  font-size: 14px;
+  width: 213px;
+  margin: 0 auto;
+  margin-top: 1px;
+  margin-bottom: 3px;
+  display: none;
+}
+
+tr {
+  line-height: 1.45;
+}
+
+tr:nth-child(odd) {
+  background-color: #e6e6e6;
+}
+
+tr:nth-child(even) {
+  background-color: #fbfbfb;
+}
+
+.goods__td_left {
+  float: left;
+}
+
+.goods__td_right {
+  float: right;
+}
+
+.goods__price_page3, .goods__stars_list_page3, .goods__buy-info_page3 {
+  text-align: center;
+}
+
+.goods__stars_list_page3 {
+  margin-bottom: 3px;
+  padding-right: 5px;
+}
+
+.goods__price_page3 {
+  padding-right: 9px;
+  margin-bottom: 3px;
+}
+
+.goods__buy-info_page3 {
+  position: relative;
+}
+
+.goods__available_page3 {
+  position: absolute;
+  left: 22px;
+  top: 36px;
+}
+
+.goods__basket_page3 {
+  position: absolute;
+  right: 12px;
+  top: 30px;
+}
+
+/*╨б╤В╤А╨░╨╜╨╕╤Ж╨░1*/
+.goods__photo_page1, .goods__title_page1, .goods__info_page1, .goods__buy-info_page1, .goods__price_page1, .goods__basket_page1, .goods__available_page1 {
+  display: inline-block;
+}
+
+.content__goods_item-page1 {
+  height: 50.5px;
+  border-bottom: 1px solid #dee1e4;
+  padding-left: 12px;
+  padding-top: 5px;
+  padding-right: 14px;
+}
+
+.price__span_page1 {
+  margin-right: 8px;
+}
+
+.goods__photo_page1 {
+  margin-right: -26px;
+}
+
+.goods__buy-info_page1 {
+  float: right;
+  margin-top: 5px;
+}
+
+.price__span_page1 {
+  font-size: 18px;
+}
+
+.rouble-sign_page1 {
+  width: 8%;
+}
+
+.goods__basket_page1 {
+  float: right;
+  margin-left: 20px;
+}
+
+.goods__title_page1 {
+  font-family: "opensans-regular";
+  font-size: 14px;
+  display: none;
 }
 
 .section-title__footer {
