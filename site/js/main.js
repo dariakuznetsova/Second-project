@@ -53,50 +53,16 @@ var acco = (function () {
 // Чекбоксы и reset
 var inputs = (function () {
 
-    var init = function () {
-        _setUpListners();
-    };
+    $('.acco__content-link').on('click', function () {
+        var reset = $(this).parent().siblings().children('.label').children('.checked_elem1');
+        $(reset).removeAttr('checked');
+    });  
 
-    var _setUpListners = function ()  {
-        var checkbox = $('.label__checkbox'),
-            radio = $('.label__radio'),
-            reset = $('.acco__content-link');
-
-        $(checkbox).on('click', function() {
-            if ($(this).hasClass('label__checkbox')) {
-                $(this).removeClass('label__checkbox');
-                $(this).addClass('label__checkbox_click');    
-            }else{
-                $(this).removeClass('label__checkbox_click');
-                $(this).addClass('label__checkbox');
-            };
-        });
-
-        $(radio).on('click', function() {
-            if ($(this).hasClass('label__radio')) {
-                $(this).removeClass('label__radio');
-                $(this).addClass('label__radio_click');    
-            }else{
-                $(this).removeClass('label__radio_click');
-                $(this).addClass('label__radio');
-            };
-        });
-
-        $(reset).on('click', function () {
-            $(this).parent().siblings().children('.label').removeClass('label__checkbox_click');
-            $(this).parent().siblings().children('.label').addClass('label__checkbox');
-        });  
-    };
-
-    return {
-        init: init, 
-    };
-
-})();
+});
 
 if($('.sidebar__acco-form')) {
     acco.init();
-    inputs.init();   
+    inputs();   
 };
 
 
@@ -131,9 +97,6 @@ $(function() {
 
 });
 
-// $(document).ready(function() {
-
-// });
 
 //Смена состояний
 var main_menu = (function () {
@@ -238,3 +201,37 @@ $(document).ready(function() {
     $('.select2').select2();
     minimumResultsForSearch: Infinity
 });
+
+
+
+
+var slider2 = (function () {
+
+    var init = function () {
+        _setUpListners();
+    };
+
+    var _setUpListners = function ()  {
+
+        $('.goods__photo_small').on('click', function() {
+
+            var item1 = $(this).parent().prev().children('img'),
+                item2 = $(this).parent().prev().children('img').attr('src'),
+                item3 = $(this).children('img').attr('src');
+
+            $(item1).fadeOut(300, function () {
+               $(item1).attr('src', item3).fadeIn(300); 
+            });
+        
+        });
+    };
+
+    return {
+        init: init, 
+    };
+
+})();
+
+if($('.goods__photo_small')) {
+    slider2.init();   
+};

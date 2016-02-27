@@ -1,3 +1,7 @@
+header {
+	min-width: 1111px;
+}
+
 .header__wrapper {
 	width: $width;
 	margin: $margin-center;
@@ -78,7 +82,6 @@
 }
 
 .address__link {
-	width: 12px;
 	height: 16px;
 	@extend %inlineblock;
 }
@@ -89,6 +92,11 @@
 	vertical-align: middle;
 	margin-left: 6px;
 	@extend %inlineblock;
+	color: $font-color;
+}
+
+.telephone-block__link {
+	display: inline-block;
 }
 
 .telephone-block {
@@ -109,6 +117,7 @@
 	font-size: 18px;
 	vertical-align: middle;
 	@extend %inlineblock;
+	color: $font-color;
 }
 
 .header__container-second-line {

@@ -16,9 +16,11 @@ aside.sidebar
 					- var acco_availability = ['Во всех магазинах', 'В ближайшем магазине']
 					each acco_availability_input in acco_availability
 						li.acco__content-item
-							input(type="radio").acco__content-item_input
-							label.label.label__radio= acco_availability_input
-
+							label.label.label__radio
+								input(type="radio").acco__content-item_input.checked_elem
+								.radiobox-fake
+								=acco_availability_input
+								
 			li.acco__item.sidebar__item
 
 				a(href="#").acco__link Бренды
@@ -26,8 +28,10 @@ aside.sidebar
 					- var acco_brands = ['Lenovo', 'Apple', 'Samsung', 'Asus', 'Motorola']
 					each acco_brands_input in acco_brands
 						li.acco__content-item
-							input(type="checkbox").acco__content-item_input
-							label.label.label__checkbox= acco_brands_input
+							label.label.label__checkbox
+								input(type="checkbox").acco__content-item_input.checked_elem1
+								.checkbox-fake
+								= acco_brands_input
 					li.acco__reset
 						a(href='#').acco__content-link Сбросить фильтр
 
@@ -58,7 +62,9 @@ aside.sidebar
 					- var acco_os = ['Android', 'iOS', 'Windows-mobile', 'Symbian', 'Custom']
 					each acco_os_item in acco_os
 						li.acco__content-item
-							input(type="checkbox").acco__content-item_input
-							label.label.label__checkbox= acco_os_item
+							label.label.label__checkbox
+								input(type="checkbox").acco__content-item_input.checked_elem1
+								.checkbox-fake
+								= acco_os_item
 					li.acco__reset
 						a(href='#').acco__content-link Сбросить фильтр

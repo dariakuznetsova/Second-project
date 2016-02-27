@@ -133,47 +133,10 @@ $sidebar_color: #5d656c;
 
 .label {
 	display: inline-block;
-	position: relative;
-	padding-left: 29px;
 	cursor: pointer;
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
-
-	&:before {
-		content: "";
-		display: inline-block;
-		width: 19px;
-		height: 19px;
-		position: absolute;
-		left: 0;
-		bottom: 1px;
-		cursor: pointer;	
-	}
-}
-
-.label__radio:before {
-	@include sprite($radio-unchecked);
-}
-
-.label__radio:hover:before {
-	@include sprite($radio-hover);
-}
-
-.label__radio_click:before {
-	@include sprite($radio-checked);
-}
-		
-.label__checkbox:before {
-	@include sprite($box-unchecked);
-}
-
-.label__checkbox:hover:before {
-		@include sprite($box-hover);
-}
-
-.label__checkbox_click:before {
-	@include sprite($box-checked);
 }
 
 .acco__content-item_input {
@@ -182,10 +145,41 @@ $sidebar_color: #5d656c;
 	vertical-align: top;
 	margin-right: -24px;
 	margin-top: -1px;
-	z-index: 2;
-	position: relative;
 	outline: none;
-	display: none;
+	opacity: 0;
+	cursor: pointer;
+}
+
+.radiobox-fake, .checkbox-fake {
+	width: 19px;
+	height: 19px;
+	vertical-align: top;
+	display: inline-block;
+	margin-right: 11px;
+}
+
+.label:hover .radiobox-fake {
+	@include sprite($radio-hover);
+}
+
+.radiobox-fake {
+	@include sprite($radio-unchecked);
+}
+
+.checked_elem:checked + .radiobox-fake {
+	@include sprite($radio-checked);
+}
+
+.label:hover .checkbox-fake {
+	@include sprite($box-hover);
+}
+
+.checkbox-fake {
+	@include sprite($box-unchecked);
+}
+
+.checked_elem1:checked + .checkbox-fake {
+	@include sprite($box-checked);
 }
 
 .acco__reset {

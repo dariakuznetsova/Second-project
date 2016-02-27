@@ -147,6 +147,10 @@ The `sprites` mixin generates identical output to the CSS template
 
 @include sprites($spritesheet-sprites);
 */
+header {
+  min-width: 1111px;
+}
+
 .header__wrapper {
   width: 1111px;
   margin: 0 auto;
@@ -237,7 +241,6 @@ The `sprites` mixin generates identical output to the CSS template
 }
 
 .address__link {
-  width: 12px;
   height: 16px;
 }
 
@@ -246,6 +249,11 @@ The `sprites` mixin generates identical output to the CSS template
   font-size: 14px;
   vertical-align: middle;
   margin-left: 6px;
+  color: #333333;
+}
+
+.telephone-block__link {
+  display: inline-block;
 }
 
 .telephone-block {
@@ -266,6 +274,7 @@ The `sprites` mixin generates identical output to the CSS template
   font-family: "opensans-semibold";
   font-size: 18px;
   vertical-align: middle;
+  color: #333333;
 }
 
 .header__container-second-line {
@@ -340,6 +349,7 @@ The `sprites` mixin generates identical output to the CSS template
 
 .products-menu {
   background-color: white;
+  min-width: 1111px;
 }
 
 .products-menu__wrapper {
@@ -613,63 +623,10 @@ The `sprites` mixin generates identical output to the CSS template
 .label {
   display: inline-block;
   position: relative;
-  padding-left: 29px;
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-}
-.label:before {
-  content: "";
-  display: inline-block;
-  width: 19px;
-  height: 19px;
-  position: absolute;
-  left: 0;
-  bottom: 1px;
-  cursor: pointer;
-}
-
-.label__radio:before {
-  background-image: url(../images/sprite2.png);
-  background-position: -78px -39px;
-  width: 19px;
-  height: 19px;
-}
-
-.label__radio:hover:before {
-  background-image: url(../images/sprite2.png);
-  background-position: -78px 0px;
-  width: 19px;
-  height: 19px;
-}
-
-.label__radio_click:before {
-  background-image: url(../images/sprite2.png);
-  background-position: -39px -39px;
-  width: 19px;
-  height: 19px;
-}
-
-.label__checkbox:before {
-  background-image: url(../images/sprite2.png);
-  background-position: 0px -39px;
-  width: 19px;
-  height: 19px;
-}
-
-.label__checkbox:hover:before {
-  background-image: url(../images/sprite2.png);
-  background-position: -39px 0px;
-  width: 19px;
-  height: 19px;
-}
-
-.label__checkbox_click:before {
-  background-image: url(../images/sprite2.png);
-  background-position: 0px 0px;
-  width: 19px;
-  height: 19px;
 }
 
 .acco__content-item_input {
@@ -678,10 +635,60 @@ The `sprites` mixin generates identical output to the CSS template
   vertical-align: top;
   margin-right: -24px;
   margin-top: -1px;
-  z-index: 2;
   position: relative;
   outline: none;
-  display: none;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.radiobox-fake, .checkbox-fake {
+  width: 19px;
+  height: 19px;
+  vertical-align: top;
+  display: inline-block;
+  margin-right: 11px;
+}
+
+.label:hover .radiobox-fake {
+  background-image: url(../images/sprite2.png);
+  background-position: -78px 0px;
+  width: 19px;
+  height: 19px;
+}
+
+.radiobox-fake {
+  background-image: url(../images/sprite2.png);
+  background-position: -78px -39px;
+  width: 19px;
+  height: 19px;
+}
+
+.checked_elem:checked + .radiobox-fake {
+  background-image: url(../images/sprite2.png);
+  background-position: -39px -39px;
+  width: 19px;
+  height: 19px;
+}
+
+.label:hover .checkbox-fake {
+  background-image: url(../images/sprite2.png);
+  background-position: -39px 0px;
+  width: 19px;
+  height: 19px;
+}
+
+.checkbox-fake {
+  background-image: url(../images/sprite2.png);
+  background-position: 0px -39px;
+  width: 19px;
+  height: 19px;
+}
+
+.checked_elem1:checked + .checkbox-fake {
+  background-image: url(../images/sprite2.png);
+  background-position: 0px 0px;
+  width: 19px;
+  height: 19px;
 }
 
 .acco__reset {
@@ -930,6 +937,7 @@ The `sprites` mixin generates identical output to the CSS template
   border: 1px solid #dfe2e5;
   border-radius: 5px;
   background-color: #fbfbfb;
+  margin-bottom: 65px;
 }
 
 .content__goods_list {
@@ -939,9 +947,8 @@ The `sprites` mixin generates identical output to the CSS template
 .content__goods_item-page2 {
   padding-left: 22px;
   padding-top: 19px;
-  height: 245px;
+  min-height: 246px;
   padding-right: 26px;
-  padding-bottom: 20px;
   border-bottom: 1px solid #dfe2e5;
 }
 
@@ -966,15 +973,25 @@ The `sprites` mixin generates identical output to the CSS template
 
 .goods__photo {
   width: 136px;
-}
-
-.goods__photo_main, .goods__photo_list {
-  /*display: none;*/
+  position: relative;
 }
 
 .goods__photo_list {
   padding-left: 0;
   font-size: 0;
+}
+
+.goods__photo_main-img, .goods__photo_small-img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.goods__photo_small-img {
+  height: 85%;
 }
 
 .goods__photo_main {
@@ -985,6 +1002,7 @@ The `sprites` mixin generates identical output to the CSS template
   background-color: white;
   margin-bottom: 15px;
   cursor: pointer;
+  position: relative;
 }
 .goods__photo_main:hover {
   border: 1px solid #ff6600;
@@ -1005,6 +1023,20 @@ The `sprites` mixin generates identical output to the CSS template
   border: 1px solid #ff6600;
 }
 
+.slider_first_picture {
+  background-image: url(/images/samsung-big-2.jpg);
+  background-size: 55%;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.slider_second_picture {
+  background-image: url(/images/samsung-big-3.jpg);
+  background-size: 55%;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
 .goods__photo_main-wrapper {
   margin-top: 6px;
   margin-left: 18px;
@@ -1016,260 +1048,8 @@ The `sprites` mixin generates identical output to the CSS template
   top: 5%;
 }
 
-.goods__photo_main-samsung {
-  background-image: url(../images/sprite4.png);
-  background-position: 0px -341px;
-  width: 93px;
-  height: 123px;
-}
-
-.goods__photo_small-samsung1 {
-  background-image: url(../images/sprite3.png);
-  background-position: -42px -48px;
-  width: 22px;
-  height: 28px;
-}
-
-.goods__photo_small-samsung2 {
-  background-image: url(../images/sprite3.png);
-  background-position: 0px -97px;
-  width: 19px;
-  height: 29px;
-}
-
-.goods__photo_small-samsung3 {
-  background-image: url(../images/sprite3.png);
-  background-position: -36px -146px;
-  width: 16px;
-  height: 30px;
-}
-
 .goods__photo_small:last-child {
   margin-right: 0;
-}
-
-.goods__photo_main-lumia640 {
-  background-image: url(../images/sprite4.png);
-  background-position: -486px 0px;
-  width: 97px;
-  height: 119px;
-}
-
-.goods__photo_small-lumia640-1 {
-  background-image: url(../images/sprite3.png);
-  background-position: -94px 0px;
-  width: 22px;
-  height: 28px;
-}
-
-.goods__photo_small-lumia640-2 {
-  background-image: url(../images/sprite3.png);
-  background-position: -39px -97px;
-  width: 19px;
-  height: 29px;
-}
-
-.goods__photo_small-lumia640-3 {
-  background-image: url(../images/sprite3.png);
-  background-position: 0px -196px;
-  width: 15px;
-  height: 29px;
-}
-
-.goods__photo_main-archos {
-  background-image: url(../images/sprite4.png);
-  background-position: -633px 0px;
-  width: 81px;
-  height: 126px;
-}
-
-.goods__photo_small-archos1 {
-  background-image: url(../images/sprite3.png);
-  background-position: -94px -48px;
-  width: 19px;
-  height: 29px;
-}
-
-.goods__photo_small-archos2 {
-  background-image: url(../images/sprite3.png);
-  background-position: -215px -100px;
-  width: 15px;
-  height: 29px;
-}
-
-.goods__photo_small-archos3 {
-  background-image: url(../images/sprite3.png);
-  background-position: -215px -51px;
-  width: 15px;
-  height: 29px;
-}
-
-.goods__photo_main-philips {
-  background-image: url(../images/sprite4.png);
-  background-position: 0px -168px;
-  width: 107px;
-  height: 123px;
-}
-
-.goods__photo_small-philips1 {
-  background-image: url(../images/sprite3.png);
-  background-position: -136px 0px;
-  width: 23px;
-  height: 26px;
-}
-
-.goods__photo_small-philips2 {
-  background-image: url(../images/sprite3.png);
-  background-position: -139px -196px;
-  width: 14px;
-  height: 28px;
-}
-
-.goods__photo_small-philips3 {
-  background-image: url(../images/sprite3.png);
-  background-position: -144px -146px;
-  width: 16px;
-  height: 28px;
-}
-
-.goods__photo_main-lumia430 {
-  background-image: url(../images/sprite4.png);
-  background-position: -157px -168px;
-  width: 99px;
-  height: 121px;
-}
-
-.goods__photo_small-lumia430-1 {
-  background-image: url(../images/sprite3.png);
-  background-position: -78px -97px;
-  width: 21px;
-  height: 26px;
-}
-
-.goods__photo_small-lumia430-2 {
-  background-image: url(../images/sprite3.png);
-  background-position: -180px -146px;
-  width: 15px;
-  height: 28px;
-}
-
-.goods__photo_small-lumia430-3 {
-  background-image: url(../images/sprite3.png);
-  background-position: -108px -146px;
-  width: 16px;
-  height: 28px;
-}
-
-.goods__photo_main-senseit {
-  background-image: url(../images/sprite4.png);
-  background-position: -168px 0px;
-  width: 120px;
-  height: 116px;
-}
-
-.goods__photo_small-senseit1 {
-  background-image: url(../images/sprite3.png);
-  background-position: -48px 0px;
-  width: 26px;
-  height: 26px;
-}
-
-.goods__photo_small-senseit2 {
-  background-image: url(../images/sprite3.png);
-  background-position: -105px -196px;
-  width: 14px;
-  height: 29px;
-}
-
-.goods__photo_small-senseit3 {
-  background-image: url(../images/sprite3.png);
-  background-position: -70px -196px;
-  width: 15px;
-  height: 29px;
-}
-
-.goods__photo_main-hs {
-  background-image: url(../images/sprite4.png);
-  background-position: -338px 0px;
-  width: 98px;
-  height: 127px;
-}
-
-.goods__photo_small-hs1 {
-  background-image: url(../images/sprite3.png);
-  background-position: 0px -48px;
-  width: 22px;
-  height: 29px;
-}
-
-.goods__photo_small-hs2 {
-  background-image: url(../images/sprite3.png);
-  background-position: 0px -146px;
-  width: 16px;
-  height: 30px;
-}
-
-.goods__photo_small-hs3 {
-  background-image: url(../images/sprite3.png);
-  background-position: -179px 0px;
-  width: 16px;
-  height: 32px;
-}
-
-.goods__photo_main-alc {
-  background-image: url(../images/sprite4.png);
-  background-position: -486px -169px;
-  width: 90px;
-  height: 122px;
-}
-
-.goods__photo_small-alc1 {
-  background-image: url(../images/sprite3.png);
-  background-position: -136px -46px;
-  width: 20px;
-  height: 28px;
-}
-
-.goods__photo_small-alc2 {
-  background-image: url(../images/sprite3.png);
-  background-position: -72px -146px;
-  width: 16px;
-  height: 29px;
-}
-
-.goods__photo_small-alc3 {
-  background-image: url(../images/sprite3.png);
-  background-position: -35px -196px;
-  width: 15px;
-  height: 29px;
-}
-
-.goods__photo_main-fly {
-  background-image: url(../images/sprite4.png);
-  background-position: 0px 0px;
-  width: 118px;
-  height: 118px;
-}
-
-.goods__photo_small-fly1 {
-  background-image: url(../images/sprite3.png);
-  background-position: 0px 0px;
-  width: 28px;
-  height: 28px;
-}
-
-.goods__photo_small-fly2 {
-  background-image: url(../images/sprite3.png);
-  background-position: -179px -52px;
-  width: 16px;
-  height: 31px;
-}
-
-.goods__photo_small-fly3 {
-  background-image: url(../images/sprite3.png);
-  background-position: -215px 0px;
-  width: 15px;
-  height: 31px;
 }
 
 .mark {
@@ -1478,6 +1258,11 @@ The `sprites` mixin generates identical output to the CSS template
   display: none;
 }
 
+td {
+  max-height: 21px;
+  overflow: hidden;
+}
+
 tr {
   line-height: 1.45;
 }
@@ -1492,10 +1277,12 @@ tr:nth-child(even) {
 
 .goods__td_left {
   float: left;
+  max-width: 60%;
 }
 
 .goods__td_right {
   float: right;
+  max-width: 30%;
 }
 
 .goods__price_page3, .goods__stars_list_page3, .goods__buy-info_page3 {
@@ -1573,6 +1360,43 @@ tr:nth-child(even) {
   display: none;
 }
 
+.goods__info_page1 {
+  max-width: 289px;
+  max-height: 20px;
+}
+
+.content__pages {
+  margin-bottom: 2px;
+}
+
+.content__pages_list {
+  text-align: right;
+  padding-left: 0;
+}
+
+.content__pages_item, .content__pages_link {
+  display: inline-block;
+}
+
+.content__pages_item {
+  background-color: #fbfbfb;
+  border: 1px solid #dee1e4;
+  border-radius: 3px;
+}
+.content__pages_item:hover {
+  background-color: #e0e0e0;
+}
+
+.content__pages_link {
+  font-family: "opensans-bold";
+  font-size: 12px;
+  color: #7f7f7f;
+  width: 24px;
+  height: 24px;
+  text-align: center;
+  padding-top: 3px;
+}
+
 .section-title__footer {
   margin-bottom: 18px;
 }
@@ -1614,6 +1438,12 @@ tr:nth-child(even) {
   width: 100%;
   padding-top: 35px;
   font-family: "opensans-regular";
+  min-width: 1111px;
+}
+
+.logo__wrapper {
+  width: 238px;
+  height: 41px;
 }
 
 .footer__wrapper {

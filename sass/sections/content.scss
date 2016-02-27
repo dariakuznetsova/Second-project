@@ -126,6 +126,7 @@
 	border: 1px solid #dfe2e5;
 	border-radius: 5px;
 	background-color: #fbfbfb;
+	margin-bottom: 65px;
 }
 
 .content__goods_list {
@@ -135,9 +136,8 @@
 .content__goods_item-page2 {
 	padding-left: 22px;
 	padding-top: 19px;
-	height: 245px;
+	min-height: 246px;
 	padding-right: 26px;
-	padding-bottom: 20px;
 	border-bottom: 1px solid #dfe2e5;
 }
 
@@ -162,16 +162,27 @@
 
 .goods__photo {
 	width: 136px;
-}
-
-.goods__photo_main, .goods__photo_list {
-	/*display: none;*/
+	position: relative;
 }
 
 .goods__photo_list {
 	padding-left: 0;
 	font-size: 0;
 }
+
+.goods__photo_main-img, .goods__photo_small-img {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+
+.goods__photo_small-img {
+	height: 85%;
+}
+
 
 .goods__photo_main {
 	width: 136px;
@@ -181,6 +192,7 @@
 	background-color: white;
 	margin-bottom: 15px;
 	cursor: pointer;
+	position: relative;
 
 	&:hover {
 		border: 1px solid $orange;
@@ -203,6 +215,20 @@
 	}
 }
 
+.slider_first_picture {
+	background-image: url(/images/samsung-big-2.jpg);
+	background-size: 55%;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+}
+
+.slider_second_picture {
+	background-image: url(/images/samsung-big-3.jpg);
+	background-size: 55%;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+}
+
 .goods__photo_main-wrapper {
 	margin-top: 6px;
 	margin-left: 18px;
@@ -214,152 +240,8 @@
 	top: 5%;
 }
 
-.goods__photo_main-samsung {
-	@include sprite($samsung);
-}
-
-.goods__photo_small-samsung1 {
-	@include sprite($samsung1);
-}
-
-.goods__photo_small-samsung2 {
-	@include sprite($samsung2);
-}
-
-.goods__photo_small-samsung3 {
-	@include sprite($samsung3);
-}
-
 .goods__photo_small:last-child {
 	margin-right: 0;
-}
-
-.goods__photo_main-lumia640 {
-	@include sprite($lumia640);
-}
-
-.goods__photo_small-lumia640-1 {
-	@include sprite($lumia640-1);
-}
-
-.goods__photo_small-lumia640-2 {
-	@include sprite($lumia640-2);
-}
-
-.goods__photo_small-lumia640-3 {
-	@include sprite($lumia640-3);
-}
-
-.goods__photo_main-archos {
-	@include sprite($archos);
-}
-
-.goods__photo_small-archos1 {
-	@include sprite($archos1);
-}
-
-.goods__photo_small-archos2 {
-	@include sprite($archos2);
-}
-
-.goods__photo_small-archos3 {
-	@include sprite($archos3);
-}
-
-.goods__photo_main-philips {
-	@include sprite($philips);
-}
-
-.goods__photo_small-philips1 {
-	@include sprite($philips1);
-}
-
-.goods__photo_small-philips2 {
-	@include sprite($philips2);
-}
-
-.goods__photo_small-philips3 {
-	@include sprite($philips3);
-}
-
-.goods__photo_main-lumia430 {
-	@include sprite($lumia430);
-}
-
-.goods__photo_small-lumia430-1 {
-	@include sprite($lumia430-1);
-}
-
-.goods__photo_small-lumia430-2 {
-	@include sprite($lumia430-2);
-}
-
-.goods__photo_small-lumia430-3 {
-	@include sprite($lumia430-3);
-}
-
-.goods__photo_main-senseit {
-	@include sprite($sens);
-}
-
-.goods__photo_small-senseit1 {
-	@include sprite($sens1);
-}
-
-.goods__photo_small-senseit2 {
-	@include sprite($sens2);
-}
-
-.goods__photo_small-senseit3 {
-	@include sprite($sens3);
-}
-
-.goods__photo_main-hs {
-	@include sprite($hs);
-}
-
-.goods__photo_small-hs1 {
-	@include sprite($hs1);
-}
-
-.goods__photo_small-hs2 {
-	@include sprite($hs2);
-}
-
-.goods__photo_small-hs3 {
-	@include sprite($hs3);
-}
-
-.goods__photo_main-alc {
-	@include sprite($alc);
-}
-
-.goods__photo_small-alc1 {
-	@include sprite($alc1);
-}
-
-.goods__photo_small-alc2 {
-	@include sprite($alc2);
-}
-
-.goods__photo_small-alc3 {
-	@include sprite($alc3);
-}
-
-.goods__photo_main-fly {
-	@include sprite($fly);
-}
-
-.goods__photo_small-fly1 {
-	@include sprite($fly1);
-}
-
-.goods__photo_small-fly2 {
-	@include sprite($fly2);
-}
-
-.goods__photo_small-fly3 {
-	@include sprite($fly3);
 }
 
 .mark {
@@ -557,6 +439,11 @@
 	display: none;
 }
 
+td {
+	max-height: 21px;
+	overflow: hidden;
+}
+
 tr {
 	line-height: 1.45;
 }
@@ -571,10 +458,12 @@ tr:nth-child(even) {
 
 .goods__td_left {
 	float: left;
+	max-width: 60%;
 }
 
 .goods__td_right {
 	float: right;
+	max-width: 30%;
 }
 
 .goods__price_page3, .goods__stars_list_page3, .goods__buy-info_page3{
@@ -653,3 +542,41 @@ tr:nth-child(even) {
 	display: none;
 }
 
+.goods__info_page1 {
+	max-width: 289px;
+	max-height: 20px;
+}
+
+.content__pages {
+	margin-bottom: 2px;
+}
+
+.content__pages_list {
+	text-align: right;
+	padding-left: 0;
+}
+
+.content__pages_item, .content__pages_link {
+	display: inline-block;
+}
+
+.content__pages_item {
+	background-color: #fbfbfb;
+	border: 1px solid #dee1e4;
+	border-radius: 3px;
+		
+	&:hover {
+		background-color: #e0e0e0;
+	}
+
+}
+
+.content__pages_link {
+	font-family: $opensansb;
+	font-size: 12px;
+	color: #7f7f7f;
+	width: 24px;
+	height: 24px;
+	text-align: center;
+	padding-top: 3px;
+}
