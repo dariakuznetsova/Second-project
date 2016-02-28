@@ -106,83 +106,22 @@ var main_menu = (function () {
     };
 
     var _setUpListners = function ()  {
+        
+        var content = $('.content');
 
         $('.catalogue__link_one').on ('click', function() {
-            $(this).children('.sprite__block').addClass('sprite__block_one-hover');
-            $('.sprite__block').removeClass('sprite__block_two-hover sprite__block_three-hover');
-            $('.content__goods').removeClass('content__goods_page3');
-            $('.content__goods_item').removeClass('content__goods_item-page1 content__goods_item-page3').addClass('content__goods_item-page2');
-            $('.goods__photo').removeClass('goods__photo_page1 goods__photo_page3').addClass('goods__photo_page2');
-            $('.mark').addClass('mark_page2');
-            $('.goods__info').removeClass('goods__info_page1 goods__info_page3').addClass('goods__info_page2');
-            $('.goods__title').show()
-            $('.goods__title').removeClass('goods__title_page3');
-            $('.goods__title_page1').css({'display':'none'});
-            $('.goods__table').css({'display':'none'});
-            $('.goods__text').show();
-            $('.mark').show();
-            $('.goods__photo_main').show();
-            $('.goods__photo_list').show();
-            $('.goods__stars_list').show();
-            $('.goods__stars_list').removeClass('goods__stars_list_page3');
-            $('.goods__buy-info').removeClass('goods__buy-info_page1 goods__buy-info_page3').addClass('goods__buy-info_page2');
-            $('.goods__price').removeClass('goods__price_page1 goods__price_page3').addClass('goods__price_page2');
-            $('.price__span').removeClass('price__span_page1');
-            $('.rouble-sign').removeClass('rouble-sign_page1');
-            $('.goods__basket').removeClass('goods__basket_page1 goods__basket_page3').addClass('goods__basket_page2');
-            $('.goods__available').removeClass('goods__available_page1 goods__available_page3').addClass('goods__available_page2');
+            //$(this).children('.sprite__block').removeClass('sprite__block_one').addClass('sprite__block_one-hover');
+            content.removeClass('content-page2 content-page3').addClass('content-page1');
         });
 
         $('.catalogue__link_two').on ('click', function() {
-            $(this).children('.sprite__block').addClass('sprite__block_two-hover');
-            $('.sprite__block').removeClass('sprite__block_one-hover sprite__block_three-hover');
-            $('.content__goods').addClass('content__goods_page3');
-            $('.content__goods_item').removeClass('content__goods_item-page1 content__goods_item-page2').addClass('content__goods_item-page3');
-            $('.goods__photo').removeClass('goods__photo_page1 goods__photo_page2').addClass('goods__photo_page3');
-            $('.mark').removeClass('mark_page2');
-            $('.goods__photo_main').show();
-            $('.goods__photo_list').show();
-            $('.goods__info').removeClass('goods__info_page1 goods__info_page2').addClass('goods__info_page3');
-            $('.goods__title').show()
-            $('.goods__title').addClass('goods__title_page3');
-            $('.goods__title_page1').css({'display':'none'});
-            $('.goods__text').css({'display':'none'});
-            $('.mark').css({'display':'none'});
-            $('.goods__table').show();
-            $('.goods__stars_list').show();
-            $('.goods__stars_list').addClass('goods__stars_list_page3');
-            $('.goods__buy-info').removeClass('goods__buy-info_page1 goods__buy-info_page2').addClass('goods__buy-info_page3');
-            $('.goods__price').removeClass('goods__price_page1 goods__price_page2').addClass('goods__price_page3');
-            $('.price__span').removeClass('price__span_page1');
-            $('.rouble-sign').removeClass('rouble-sign_page1');
-            $('.goods__basket').removeClass('goods__basket_page1 goods__basket_page2').addClass('goods__basket_page3');
-            $('.goods__available').removeClass('goods__available_page1 goods__available_page2').addClass('goods__available_page3');
+            //$(this).children('.sprite__block').removeClass('sprite__block_two').addClass('sprite__block_two-hover');
+            content.removeClass('content-page1 content-page3').addClass('content-page2');
         });
-
         $('.catalogue__link_three').on ('click', function() {
-            $(this).children('.sprite__block').addClass('sprite__block_three-hover');
-            $('.sprite__block').removeClass('sprite__block_two-hover sprite__block_one-hover');
-            $('.content__goods').removeClass('content__goods_page3');
-            $('.goods__photo_main').css({'display':'none'});
-            $('.goods__photo_list').css({'display':'none'});
-            $('.content__goods_item').removeClass('content__goods_item-page2 content__goods_item-page3').addClass('content__goods_item-page1');
-            $('.goods__photo').removeClass('goods__photo_page2 goods__photo_page3').addClass('goods__photo_page1');
-            $('.mark').removeClass('mark_page2');
-            $('.goods__info').removeClass('goods__info_page2 goods__info_page3').addClass('goods__info_page1');
-            $('.goods__title').css({'display':'none'});
-            $('.goods__title_page1').show();
-            $('.goods__text').css({'display':'none'});
-            $('.mark').show();
-            $('.goods__table').css({'display':'none'});
-            $('.goods__stars_list').css({'display':'none'});
-            $('.goods__buy-info').removeClass('goods__buy-info_page2 goods__buy-info_page3').addClass('goods__buy-info_page1');
-            $('.goods__price').removeClass('goods__price_page2 goods__price_page3').addClass('goods__price_page1');
-            $('.price__span').addClass('price__span_page1');
-            $('.rouble-sign').addClass('rouble-sign_page1');
-            $('.goods__basket').removeClass('goods__basket_page2 goods__basket_page3').addClass('goods__basket_page1');
-            $('.goods__available').removeClass('goods__available_page2 goods__available_page3').addClass('goods__available_page1');
+            //$(this).children('.sprite__block').removeClass('sprite__block_three').addClass('sprite__block_three-hover');
+            content.removeClass('content-page1 content-page2').addClass('content-page3');
         });
-
        
     };
 
