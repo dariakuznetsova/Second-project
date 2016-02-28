@@ -700,10 +700,7 @@ header {
 .acco__colors {
   padding-right: 65px;
   margin-bottom: -2px;
-}
-
-.acco__item_color {
-  padding-bottom: 3px;
+  padding-top: 3px;
 }
 
 .acco__colors_item {
@@ -1138,42 +1135,50 @@ header {
 }
 
 .content-page1 .content__goods_item {
-  padding-left: 22px;
-  padding-top: 19px;
-  min-height: 246px;
-  padding-right: 26px;
+  padding: 19px 26px 0 22px;
   border-bottom: 1px solid #dfe2e5;
 }
+.content-page1 .wrap {
+  display: table;
+  margin-bottom: 15px;
+}
 .content-page1 .goods__photo, .content-page1 .goods__info, .content-page1 .goods__buy-info {
-  display: inline-block;
+  display: table-cell;
   vertical-align: top;
 }
+.content-page1 .goods__photo {
+  padding-right: 24px;
+}
 .content-page1 .goods__info {
-  width: 390px;
   margin-top: 5px;
   margin-left: 20px;
+  padding: 5px 15px 15px 0;
 }
 .content-page1 .goods__buy-info {
   height: 100%;
   width: 127px;
-  float: right;
   border-left: 1px solid #dee1e4;
   padding-left: 24px;
+  position: relative;
 }
 .content-page1 .mark {
   margin-top: 7px;
   margin-left: 13px;
+  margin-bottom: 0;
 }
 .content-page1 .goods__price {
   padding-left: 24px;
   padding-top: 2px;
-  margin-bottom: 124px;
 }
 .content-page1 .goods__basket {
   margin-bottom: 5px;
+  position: absolute;
+  bottom: 20px;
 }
 .content-page1 .goods__available {
   margin-left: 21px;
+  position: absolute;
+  bottom: 1px;
 }
 .content-page1 .goods__title3, .content-page1 .goods__table {
   display: none;
@@ -1239,11 +1244,9 @@ header {
 }
 .content-page2 .goods__td_left {
   float: left;
-  max-width: 60%;
 }
 .content-page2 .goods__td_right {
   float: right;
-  max-width: 30%;
 }
 .content-page2 .goods__price, .content-page2 .goods__stars_list, .content-page2 .goods__buy-info {
   text-align: center;
@@ -1285,11 +1288,14 @@ header {
   display: inline-block;
 }
 .content-page3 .content__goods_item {
-  height: 50.5px;
+  height: 51px;
   border-bottom: 1px solid #dee1e4;
   padding-left: 12px;
-  padding-top: 5px;
+  padding-top: 4px;
   padding-right: 14px;
+}
+.content-page3 .goods__photo, .content-page3 .goods__info, .content-page3 .goods__buy-info {
+  vertical-align: middle;
 }
 .content-page3 .price__span {
   margin-right: 8px;
@@ -1315,15 +1321,12 @@ header {
   font-family: "opensans-regular";
   font-size: 14px;
   display: inline-block;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  position: absolute;
-  bottom: -5px;
+  white-space: nowrap;
+  width: 289px;
 }
 .content-page3 .goods__info {
-  max-width: 289px;
-  max-height: 20px;
-  position: relative;
+  width: 289px;
+  overflow: hidden;
 }
 .content-page3 .goods__photo_main, .content-page3 .goods__photo_list, .content-page3 .goods__title, .content-page3 .goods__text, .content-page3 .goods__table, .content-page3 .goods__stars_list {
   display: none;

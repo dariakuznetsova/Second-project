@@ -14,11 +14,9 @@ var acco = (function () {
 
         $('.acco__link').on ('click', function() {         
             if ($(this).hasClass('up')){
-                $(this).removeClass('up').addClass('down');
-                $(this).addClass('acco__link_hover');
+                $(this).removeClass('up').addClass('down acco__link_hover');
             }else if($(this).hasClass('down')){
-                $(this).removeClass('down').addClass('up');
-                $(this).removeClass('acco__link_hover');
+                $(this).removeClass('down').addClass('up acco__link_hover');
             };
             $(this).next().stop().slideToggle();
         });
@@ -26,19 +24,13 @@ var acco = (function () {
        $('.acco__link').hover (
             function() {
                 if ($(this).next('.acco__content').css('display') == 'none') {
-                        $(this).removeClass('up');
-                        $(this).addClass('down');
-                        $(this).addClass('acco__link_hover');
+                        $(this).removeClass('up').addClass('down acco__link_hover acco__link_hover');
                     }else if($(this).next('.acco__content').css('display') == 'block'){
-                        $(this).removeClass('acco__link_hover');
-                        $(this).removeClass('down');
-                        $(this).addClass('up');
+                        $(this).removeClass('acco__link_hover down').addClass('up');
                     }; 
             },
             function () {
-                $(this).removeClass('up');
-                $(this).removeClass('down');
-                $(this).removeClass('acco__link_hover'); 
+                $(this).removeClass('up down acco__link_hover');
             }); 
     };
 
@@ -56,7 +48,7 @@ var inputs = (function () {
     $('.acco__content-link').on('click', function () {
         var reset = $(this).parent().siblings().children('.label').children('.checked_elem1');
         $(reset).removeAttr('checked');
-    });  
+    });
 
 });
 
@@ -106,20 +98,17 @@ var main_menu = (function () {
     };
 
     var _setUpListners = function ()  {
-        
+
         var content = $('.content');
 
         $('.catalogue__link_one').on ('click', function() {
-            //$(this).children('.sprite__block').removeClass('sprite__block_one').addClass('sprite__block_one-hover');
             content.removeClass('content-page2 content-page3').addClass('content-page1');
         });
 
         $('.catalogue__link_two').on ('click', function() {
-            //$(this).children('.sprite__block').removeClass('sprite__block_two').addClass('sprite__block_two-hover');
             content.removeClass('content-page1 content-page3').addClass('content-page2');
         });
         $('.catalogue__link_three').on ('click', function() {
-            //$(this).children('.sprite__block').removeClass('sprite__block_three').addClass('sprite__block_three-hover');
             content.removeClass('content-page1 content-page2').addClass('content-page3');
         });
        

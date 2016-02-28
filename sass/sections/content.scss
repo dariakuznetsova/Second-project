@@ -332,49 +332,60 @@
 .content-page1 {
 
 	.content__goods_item {
-		padding-left: 22px;
-		padding-top: 19px;
-		min-height: 246px;
-		padding-right: 26px;
+		padding: 19px 26px 0 22px;
 		border-bottom: 1px solid #dfe2e5;
 	}
 
+	.wrap {
+		display: table;
+		margin-bottom: 15px;
+	}
+
+
 	.goods__photo, .goods__info, .goods__buy-info {
-		display: inline-block;
+		display: table-cell;
 		vertical-align: top;
 	}
 
+	.goods__photo {
+		padding-right: 24px;
+	}
+
 	.goods__info {
-		width: 390px;
 		margin-top: 5px;
 		margin-left: 20px;
+		padding: 5px 15px 15px 0;
 	}
 
 	.goods__buy-info {
 		height: 100%;
 		width: 127px;
-		float: right;
 		border-left: 1px solid #dee1e4;
 		padding-left: 24px;
+		position: relative;
 	}
 		
 	.mark {
 		margin-top: 7px;
-		margin-left: 13px;	
+		margin-left: 13px;
+		margin-bottom: 0;
 	}
 
 	.goods__price {
 		padding-left: 24px;
 		padding-top: 2px;
-		margin-bottom: 124px;
 	}
 
 	.goods__basket {
 		margin-bottom: 5px;
+		position: absolute;
+		bottom: 20px;
 	}
 
 	.goods__available {
 		margin-left: 21px;
+		position: absolute;
+		bottom: 1px;
 	}
 
 	.goods__title3, .goods__table {
@@ -457,12 +468,10 @@
 
 	.goods__td_left {
 		float: left;
-		max-width: 60%;
 	}
 
 	.goods__td_right {
 		float: right;
-		max-width: 30%;
 	}
 
 	.goods__price, .goods__stars_list, .goods__buy-info{
@@ -518,11 +527,15 @@
 	}
 
 	.content__goods_item {
-		height: 50.5px;
+		height: 51px;
 		border-bottom: 1px solid #dee1e4;
 		padding-left: 12px;
-		padding-top: 5px;
+		padding-top: 4px;
 		padding-right: 14px;
+	}
+
+	.goods__photo, .goods__info, .goods__buy-info {
+		vertical-align: middle;
 	}
 
 	.price__span {
@@ -555,16 +568,13 @@
 		font-family: $opensansreg;
 		font-size: 14px;
 		display: inline-block;
-		text-overflow: ellipsis;
-		overflow: hidden;
-		position: absolute;
-		bottom: -5px;
+		white-space: nowrap;
+		width: 289px;
 	}
 
 	.goods__info {
-		max-width: 289px;
-		max-height: 20px;
-		position: relative;
+		width: 289px;
+		overflow: hidden;
 	}
 
 	.goods__photo_main, .goods__photo_list, .goods__title, .goods__text, .goods__table, .goods__stars_list {
